@@ -1,9 +1,8 @@
 ---
 title: "Hello World"
 date: 2019-07-06
-draft: false
-featured_image: "/fig/2019-07-06.jpg"
-author: [Dan F-M]
+authors:
+- Dan F-M
 ---
 
 ![img](/fig/2019-07-06.jpg)

@@ -5,6 +5,9 @@ theme = "hyde-hyde"
 # preserveTaxonomyNames = true
 paginate = 10
 
+[taxonomies]
+  author = "authors"
+
 ## Site Settings
 [params]
   dateformat = "Jan 2, 2006"
