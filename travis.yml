@@ -1,0 +1,25 @@
+sudo: false
+dist: xenial
+addons:
+    apt:
+        packages:
+            - hugo
+
+install:
+  - hugo version
+
+script:
+  - hugo
+
+after_success: |
+    if [ -n "$GITHUB_API_KEY" ]; then
+        cd $TRAVIS_BUILD_DIR
+
+        git checkout --orphan gh-pages
+        git rm -rf .
+        mv public/* .
+        git add -f *
+        git -c user.name='travis' -c user.email='travis' commit -m "updating website"
+        git push -q -f https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG gh-pages
+    fi
+
