@@ -16,5 +16,5 @@ after_success: |
         mv public/* .
         git add -f *
         git -c user.name='travis' -c user.email='travis' commit -m "updating website"
-        git push -q -f https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG gh-pages
+        git push -q -f https://dfm:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG gh-pages
     fi
