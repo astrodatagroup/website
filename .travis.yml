@@ -14,6 +14,7 @@ after_success: |
         git checkout --orphan gh-pages
         git rm -rf .
         mv public/* .
+        touch .nojekyll
         git add -f *
         git -c user.name='travis' -c user.email='travis' commit -m "updating website"
         git push -q -f https://dfm:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG gh-pages
