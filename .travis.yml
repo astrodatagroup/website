@@ -4,9 +4,9 @@ language: go
 install:
   - wget https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.tar.gz
   - tar -xvf hugo_0.55.6_Linux-64bit.tar.gz
-  - hugo/hugo version
+  - hugo version
 script:
-  - hugo/hugo
+  - hugo
 after_success: |
     if [ -n "$GITHUB_API_KEY" ]; then
         cd $TRAVIS_BUILD_DIR
