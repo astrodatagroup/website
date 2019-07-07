@@ -1,0 +1,36 @@
+baseURL = "https://astrodata.nyc/"
+# languageCode = "en-us"
+title = "Astro Data Group"
+theme = "hyde-hyde"
+# preserveTaxonomyNames = true
+paginate = 10
+
+## Site Settings
+[params]
+  dateformat = "Jan 2, 2006"
+  authorimage = "/img/skyline3.svg"
+
+  # sidebar, copyright & license
+  copyright = "astrodatagroup"
+  license = "CC-BY"
+  licenseURL = "https://creativecommons.org/licenses/by/4.0"
+
+  # https://highlightjs.org
+  highlightjs = true
+  highlightjsstyle = "github"
+  themeColor = "theme-base-08"
+
+  # Nav links in the side bar
+  [[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+  [[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 2
+
+[params.social]
+  github = "astrodatagroup"
+  twitter = "FlatironCCA"
