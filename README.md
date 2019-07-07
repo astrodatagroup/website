@@ -1,2 +1,3 @@
-# astrodatagroup.github.io
+# astrodata.nyc
+
 Our website
