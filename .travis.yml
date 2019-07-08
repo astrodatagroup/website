@@ -8,15 +8,15 @@ install:
 script:
   - ./hugo
 after_success: |
-    if [ -n "$GITHUB_API_KEY" ]; then
-        cd $TRAVIS_BUILD_DIR
+  if [ -n "$GITHUB_API_KEY" ]; then
+      cd $TRAVIS_BUILD_DIR
 
-        git checkout --orphan gh-pages
-        git rm -rf .
-        mv public/* .
-        touch .nojekyll
-        echo "astrodata.nyc" >> CNAME
-        git add -f *
-        git -c user.name='travis' -c user.email='travis' commit -m "updating website"
-        git push -q -f https://dfm:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG gh-pages
-    fi
+      git checkout --orphan gh-pages
+      git rm -rf .
+      mv public/* .
+      touch .nojekyll
+      echo "astrodata.nyc" >> CNAME
+      git add -f *
+      git -c user.name='travis' -c user.email='travis' commit -m "updating website"
+      git push -q -f https://dfm:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG gh-pages
+  fi
