@@ -3,6 +3,8 @@
 This is the blog for the [Astronomical Data Group](https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/astronomical-data/) at the [CCA](https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/).
 Our plan is to update this blog once a week to highlight the work in progress in our group.
 
+[![Build Status](https://travis-ci.org/astrodatagroup/website.svg?branch=master)](https://travis-ci.org/astrodatagroup/website)
+
 ## How to submit a new post
 
 *This information will generally be for group members.*
