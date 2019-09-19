@@ -21,14 +21,16 @@ jobs:
 
     - name: Install hugo
       run: |
-        pwd
+        git submodule update --init --recursive
         wget https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.tar.gz
         tar -xvf hugo_0.55.6_Linux-64bit.tar.gz
         ./hugo version
-        ls
 
     - name: Build the site
-      run: ./hugo
+      run: |
+        ./hugo
+        rm hugo_0.55.6_Linux-64bit.tar.gz
+        rm hugo
 
     - name: Deploy
       env:
