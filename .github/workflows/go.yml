@@ -1,0 +1,30 @@
+name: Go
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Set up Go 1.12
+      uses: actions/setup-go@v1
+      with:
+        go-version: 1.12
+      id: go
+
+    - name: Check out code into the Go module directory
+      uses: actions/checkout@v1
+
+    - name: Install hugo
+      run: |
+        wget https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.tar.gz
+        tar -xvf hugo_0.55.6_Linux-64bit.tar.gz
+        ./hugo version
+
+    - name: Build the site
+      run: ./hugo
+
+#     - name: Build the site
+#       run: ./hugo
+
