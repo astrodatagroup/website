@@ -42,5 +42,6 @@ jobs:
         touch .nojekyll
         echo "astrodata.nyc" >> CNAME
         git add -f *
+        git add .nojekyll
         git -c user.name='astrodatagroup-bot' -c user.email='astrodatagroup-bot' commit -m "updating website"
         git push -q -f https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git gh-pages
