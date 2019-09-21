@@ -1,7 +1,7 @@
 name: Build
 on:
   push:
-    branches:    
+    branches:
       - master
 jobs:
 
@@ -34,7 +34,7 @@ jobs:
 
     - name: Deploy
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
         git checkout --orphan gh-pages
         git rm -rf .
@@ -43,5 +43,5 @@ jobs:
         echo "astrodata.nyc" >> CNAME
         git add -f *
         git add .nojekyll
-        git -c user.name='astrodatagroup-bot' -c user.email='astrodatagroup-bot' commit -m "updating website"
-        git push -q -f https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git gh-pages
+        git -c user.name='astrodatagroup-bot' -c user.email='foreman.mackey+astrodata@gmail.com' commit -m "updating website"
+        git push -q -f https://astrodatagroup-bot:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git gh-pages
