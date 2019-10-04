@@ -6,7 +6,7 @@ authors:
 draft: false
 ---
 
-![img](/fig/2019-10-04.jpg)
+![img](/fig/2019-10-04.png)
 
 Along with starting at the Museum last month, I also kicked off a search for (large, so probably gaseous) planets orbiting low luminosity (3-10 Rsun) red giant branch stars with TESS. First, I used MAST to create a target catalog of stars using TICv8 stellar parameters, making cuts on stellar radius and temperature which left me with ~40,000 TESS targets. I then used the eleanor pipeline in order to download individual sectors of data of targets that were in TESS sectors 1 and 2. From there, I set up a "quicklook" pipeline to turn these lightcurves into plots, where I can look for key features in the data to identify high priority targets for ground-based followup RV observations. The two key features I've been looking for are planet transits in the lightcurve, as well as stellar granulation and oscillation features in the Fourier transform of the lightcurve. Combining these features, I can precisely characterize the stellar mass and radius, and planet candidate radius in the system, which I will combine with RV measurements to confirm planets and measure their masses and eccentricities when possible.
 
