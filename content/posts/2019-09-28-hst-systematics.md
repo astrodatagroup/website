@@ -1,4 +1,4 @@
-atom ---
+---
 title: Removing HST Systematics based on Our Knowledge of K2 Systematics
 date: 2019-09-28
 authors:
