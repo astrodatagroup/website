@@ -23,7 +23,7 @@ filters in distance or distance modulus, we can then construct density maps of
 the sky positions of these filtered stars to look for linear features that
 persist or appear consistent between different distance slices. This has been
 done in the past using, e.g., [the northern SDSS
-dadta](http://www.sdss3.org/science/gallery_fos_dr6_marked.php), [the full SDSS
+data](http://www.sdss3.org/science/gallery_fos_dr6_marked.php), [the full SDSS
 footprint](http://www.astro.yale.edu/abonaca/research/halo.html), and
 [Pan-STARRS](https://ctslater.github.io/monoceros.html).
 
