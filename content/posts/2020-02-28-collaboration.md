@@ -10,7 +10,7 @@ Inspired by a conversation with Andy Casey who we visited at Monash University
 in Melbourne last week, I decided to write a [Collaboration
 Policy](https://docs.google.com/document/d/1BWaVOINUsdvUmcnNl0NWxpiJTcLDVmh2V80ni4o6AaE/edit?usp=sharing), and share my feelings on the topic at our weekly group meeting.
 
-At Monash, Andy showed me the `Research Expectations' page of his website,
+At Monash, Andy showed me the [Research Expectations](http://astrowizici.st/research/expectations/) page of his website,
 which is a document outlining the expectations he has for his students, and
 what their expectations might be for him.
 I love this idea and would like to create my *own* research expectations
