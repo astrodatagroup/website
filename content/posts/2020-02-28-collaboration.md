@@ -47,4 +47,4 @@ together, and I think we'll converge on an official version soon.
 I really enjoyed writing this document.
 I'll  find it useful to send to my collaborators, but I also enjoyed
 solidifying some of my feelings and opinions on this topic.
-I recommend that everyone goes through this exersize!
+I recommend that everyone goes through this exercise!
