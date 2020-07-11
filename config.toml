@@ -11,7 +11,8 @@ paginate = 10
 ## Site Settings
 [params]
   dateformat = "Jan 2, 2006"
-  authorimage = "/img/skyline3.svg"
+  description = "The Astronomical Data Group at The Center for Computational Astrophysics, Flatiron Institute, Simons Foundation in New York City"
+  title = "The Astronomical Data Group"
 
   # sidebar, copyright & license
   copyright = "astrodatagroup"
