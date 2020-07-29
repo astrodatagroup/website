@@ -39,3 +39,5 @@ paginate = 10
   github = "astrodatagroup"
   twitter = "FlatironCCA"
 
+[markup.goldmark.renderer]
+unsafe = true
