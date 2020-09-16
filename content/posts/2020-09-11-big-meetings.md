@@ -23,3 +23,5 @@ I don't love this option, because this meeting is often the only time that I get
 But, we haven't been able to identify a format that helps to make sure that everyone gets and opportunity to share.
 We'd love to hear if there are other groups out there doing interesting things with their meetings.
 We're always keen to try experiments, especially since we'll be staying fully-remote for the foreseeable future!
+
+If you have thoughts, please [Tweet at me](https://twitter.com/exoplaneteer) or send me an email (should be [easy to find](https://www.simonsfoundation.org/team/daniel-foreman-mackey/)!)
