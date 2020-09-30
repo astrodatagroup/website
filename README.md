@@ -5,7 +5,7 @@ Our plan is to update this blog once a week to highlight the work in progress in
 
 [![Build Status](https://github.com/astrodatagroup/website/workflows/Build/badge.svg)](https://github.com/astrodatagroup/website/actions)
 
-## How to submit a new post
+## How to Submit New Post
 
 *This information will generally be for group members.*
 
