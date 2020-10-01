@@ -1,4 +1,4 @@
-# astrodata.nyc
+# Astrodata.nyc
 
 This is the blog for the [Astronomical Data Group](https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/astronomical-data/) at the [CCA](https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/).
 Our plan is to update this blog once a week to highlight the work in progress in our group.
