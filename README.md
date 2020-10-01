@@ -16,4 +16,5 @@ Our plan is to update this blog once a week to highlight the work in progress in
 5. Set `draft: false` in the header of your post or just delete the `draft` line.
 6. Open a pull request.
 
-Some day we might make it easier using issues and a bot, but no promises.
+Some day we might make it easier using issues and a bot.
+Till then, join the community by submitting a new post and be a part of the Family. 
