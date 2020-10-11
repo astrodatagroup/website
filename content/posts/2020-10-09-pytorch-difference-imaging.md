@@ -3,11 +3,11 @@ title: GPU-accelerated difference imaging
 date: 2020-10-09
 authors:
   - Dan F-M
-images: ["/fig/2020-10-09.jpg"]
+images: ["/fig/2020-10-09.png"]
 draft: False
 ---
 
-![img](/fig/2020-10-09.jpg)
+![img](/fig/2020-10-09.png)
 
 At this week's meeting I shared an update about a project called [PyTorchDIA](https://github.com/jah1994/PyTorchDIA) led by James Hitchcock (St. Andrews) where we are looking into how numerical tools developed for machine learning can be applied to astronomy.
 Unlike many applications of PyTorch, TensorFlow, etc. in astronomy, I'm not talking about _using_ neural networks.
@@ -25,3 +25,5 @@ But, the real reason why I shared this with the group was that I believe that th
 
 1. Astronomical imaging analysis shares a lot of structure with machine learning problems; let's take advantage of that!
 2. Some of the linear problems that we work on in the group might be easier and faster to solve if we use iterative solvers rather than direct solvers. The scaling is different, but also the implementations have been optimized for the forward calculation and these methods can open the possibility of generalizing the loss function.
+
+_Aside:_ I also want to mention the awesome website [weirdgalaxi.es](https://weirdgalaxi.es) (yes that is the domain name, but don't click on that if you're using Safari) that Kate Storey-Fisher made (and shared at this week's meeting) as a continuation of the project that [she previously blogged about](https://astrodata.nyc/posts/2019-08-23-anomalies/).
