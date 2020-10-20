@@ -5,10 +5,10 @@ authors:
   - Quadry Chance
 images: ["/fig/2020-10-19.png"]
 draft: false
+---
 
 ![img](/fig/2020-10-19.png)
 
----
 At this week’s meeting, I updated the group about my project with D F-M, Andy Casey (Monash University), and Tim Morton (USC- the west coast one). We are looking into how to determine how the binarity of Kepler planet hosts influence planet formation. That sounds really exciting but “determine” is doing a lot of work in that sentence. First, we have to figure out which stars are (unresolved) binaries. There are a couple of different ways in which we’ll go about doing this, but the one highlighted this week is the fruit of Andy’s work.
 
 Alongside the astrometric and RV measurements, Gaia also lists errors associated with fits. For unresolved binaries, trying to fit the astrometric or RV curve of a single star will yield an uncharacteristically large amount of error. Through Andy’s work (which I can’t claim to understand beyond the surface level), we can turn this error into a likelihood that the star is not a single star. 
