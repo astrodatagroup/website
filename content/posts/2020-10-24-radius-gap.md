@@ -3,6 +3,7 @@ title: Evolution of the exoplanet radius gap
 date: 2020-10-24
 authors:
 - Trevor David
+images: ["/fig/2020-10-24.png"]
 draft: false
 ---
 
