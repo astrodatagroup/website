@@ -3,11 +3,11 @@ title: Coding in _Julia_ vs. _Python_ (when using existing _Python_ Packages)
 date: 2020-10-31
 authors:
 - Daniel Yahalomi
-images: ["/fig/2020-10-31.png"]
+images: ["/fig/2020-10-30.png"]
 draft: false
 ---
 
-![img](/fig/2020-10-31.png)
+![img](/fig/2020-10-30.png)
 
 At this week's meeting, I asked the group for some advice about coding in Julia or Python. I am starting a project simulating the exoplanet astrometry yield from the [_Nancy Grace Roman Space Telescope_](https://www.nasa.gov/content/goddard/nancy-grace-roman-space-telescope) and I am trying to decide whether to write the code in _Julia_ or in _Python_. We are going to look at synergies between _Roman_ exoplanet astrometry and radial velocity (RV) observations from the [Terra Hunting Experiment](http://www.terrahunting.org/). In order to simulate the joint RV and astrometry signals, we are planning on using [exoplanet](https://docs.exoplanet.codes/en/stable/) or [The Joker](https://github.com/adrn/thejoker) as well as some other exclusively _Python_ packages. So, I asked for advice on whether it would still be "worth it" in terms of computational speed to write the code in _Julia_ if the code I am writing will be primarily a wrapper for other _Python_ packages. In addition, I was curious whether calling _Python_ packages in _Julia_ (using PyCall) would introduce a slowdown in the code.
 
