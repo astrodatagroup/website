@@ -1,5 +1,5 @@
 ---
-title: Coding in _Julia_ vs. _Python_ (when using existing _Python_ Packages)
+title: Coding in Julia vs. Python (when using existing Python Packages)
 date: 2020-10-30
 authors:
 - Daniel Yahalomi
