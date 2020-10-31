@@ -1,6 +1,6 @@
 ---
 title: Coding in _Julia_ vs. _Python_ (when using existing _Python_ Packages)
-date: 2020-10-31
+date: 2020-10-30
 authors:
 - Daniel Yahalomi
 images: ["/fig/2020-10-30.png"]
