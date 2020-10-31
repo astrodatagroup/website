@@ -15,6 +15,6 @@ Eric Ford said that there is no speed penalty in using PyCall in order to run _P
 
 The main takeaway I got from the conversation is that it would be possible to do the project in _Julia_, by re-writing the _Python_ packages that I would need, but that this is only really the right approach if it is something that I am specifically interested in doing as a project in itself. Otherwise, if the primary goal is to quickly produce a functioning simulation of _Roman_ astrometry + Terra Hunting RVs, then it is likely better to use the existing _Python_ code bases and to write the wrapping/scripting code in _Python_ as well.
 
-(Figure credit: https://medium.com/swlh/python-or-julia-whats-your-best-bet-for-data-science-25af6d05961b)
+[Figure credit](https://medium.com/swlh/python-or-julia-whats-your-best-bet-for-data-science-25af6d05961b)
 
 
