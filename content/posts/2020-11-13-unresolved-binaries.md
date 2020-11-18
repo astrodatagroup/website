@@ -3,6 +3,7 @@ title: Unresolved binaries and where they appear in the color-magnitude diagram
 date: 2020-11-13
 authors:
 - Adrian Price-Whelan
+images: ["/fig/2020-11-13-1.png", "/fig/2020-11-13-2.png"]
 draft: false
 ---
 
