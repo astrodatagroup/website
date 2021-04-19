@@ -36,17 +36,4 @@ jobs:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./public
           cname: astrodata.nyc
-
-#       - name: Deploy
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-#         run: |
-#           git checkout --orphan gh-pages
-#           git rm -rf .
-#           mv public/* .
-#           touch .nojekyll
-#           echo "astrodata.nyc" >> CNAME
-#           git add -f *
-#           git add .nojekyll
-#           git -c user.name='astrodatagroup-bot' -c user.email='foreman.mackey+astrodata@gmail.com' commit -m "updating website"
-#           git push -q -f https://astrodatagroup-bot:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git gh-pages
+          force_orphan: true
