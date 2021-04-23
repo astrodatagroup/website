@@ -1,6 +1,5 @@
 ---
-title: How to automatically retrieve a Bibtex entry for a Zenodo record (and add
-it to a Sphinx documentation page)
+title: How to automatically retrieve a Bibtex entry for a Zenodo record (and add it to a Sphinx documentation page)
 date: 2021-04-23
 authors:
 - Adrian Price-Whelan
