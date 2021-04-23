@@ -37,6 +37,8 @@ query the Zenodo API and store the resulting Bibtex to a local (git ignored)
 .rst file, or default to linking to the Zenodo record if that fails for any
 reason:
 
+    import pathlib
+    import warnings
     zenodo_path = pathlib.Path('ZENODO.rst')
     if not zenodo_path.exists():
         import textwrap
