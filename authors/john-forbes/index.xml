@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>John Forbes on Astro Data Group</title>
+    <link>https://astrodata.nyc/authors/john-forbes/</link>
+    <description>Recent content in John Forbes on Astro Data Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 20 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://astrodata.nyc/authors/john-forbes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Turbulence Statistics</title>
+      <link>https://astrodata.nyc/posts/2020-01-21-turbulence-stats/</link>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-01-21-turbulence-stats/</guid>
+      <description>The sites of star formation are self-gravitating, supersonic, magnetized turbulent clouds. These clouds are riddled with small-scale structure - clumps, filaments, and shocks - which undoubtedly play a role in how stars form. To understand these structures a bit better, my collaborator Nia Imara (Harvard) and I have been thinking about statistics we might use to characterize them!
+Inspired by the Zel&amp;rsquo;dovich approximation, used to describe structure formation in cosmology as a succession of gravitational collapse into sheets, filaments, and halos or clusters, we&amp;rsquo;ve been exploring the following space.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sam G on Astro Data Group</title>
+    <link>https://astrodata.nyc/authors/sam-g/</link>
+    <description>Recent content in Sam G on Astro Data Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 04 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://astrodata.nyc/authors/sam-g/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Giant planets orbiting giant stars with TESS</title>
+      <link>https://astrodata.nyc/posts/2019-10-04-giantsorbitinggiants/</link>
+      <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2019-10-04-giantsorbitinggiants/</guid>
+      <description>Along with starting at the Museum last month, I also kicked off a search for (large, so probably gaseous) planets orbiting low luminosity (3-10 Rsun) red giant branch stars with TESS. First, I used MAST to create a target catalog of stars using TICv8 stellar parameters, making cuts on stellar radius and temperature which left me with ~40,000 TESS targets. I then used the eleanor pipeline in order to download individual sectors of data of targets that were in TESS sectors 1 and 2.</description>
+    </item>
+    
+  </channel>
+</rss>

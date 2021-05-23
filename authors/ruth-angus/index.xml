@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruth Angus on Astro Data Group</title>
+    <link>https://astrodata.nyc/authors/ruth-angus/</link>
+    <description>Recent content in Ruth Angus on Astro Data Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 28 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://astrodata.nyc/authors/ruth-angus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Writing a collaboration policy</title>
+      <link>https://astrodata.nyc/posts/2020-02-28-collaboration/</link>
+      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-02-28-collaboration/</guid>
+      <description>Inspired by a conversation with Andy Casey who we visited at Monash University in Melbourne last week, I decided to write a Collaboration Policy, and share my feelings on the topic at our weekly group meeting.
+At Monash, Andy showed me the Research Expectations page of his website, which is a document outlining the expectations he has for his students, and what their expectations might be for him. I love this idea and would like to create my own research expectations guidelines for any students working with me, current or future.</description>
+    </item>
+    
+  </channel>
+</rss>

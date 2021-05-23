@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.74.0" />
+
+    
+    
+    
+
+<title>Removing HST Systematics based on Our Knowledge of K2 Systematics • Astro Data Group</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Removing HST Systematics based on Our Knowledge of K2 Systematics"/>
+<meta name="twitter:description" content="This week, Rodrigo and I have been working on using our knowledge on removing instrument systematics from Kepler to better understand how to remove instrument systematics from HST. In my research I use HST’s Wide Field Camera 3 to observe transiting exoplanets in the infrared, and use the spectrum to try to identify water in the upper atmospheres of planets. This is a tall order, seeing as the signals we are looking for are &lt;200ppm, and the instrument systematics can easily introduce correlated noise at the 0."/>
+
+<meta property="og:title" content="Removing HST Systematics based on Our Knowledge of K2 Systematics" />
+<meta property="og:description" content="This week, Rodrigo and I have been working on using our knowledge on removing instrument systematics from Kepler to better understand how to remove instrument systematics from HST. In my research I use HST’s Wide Field Camera 3 to observe transiting exoplanets in the infrared, and use the spectrum to try to identify water in the upper atmospheres of planets. This is a tall order, seeing as the signals we are looking for are &lt;200ppm, and the instrument systematics can easily introduce correlated noise at the 0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://astrodata.nyc/posts/2019-09-28-hst-systematics/" />
+<meta property="article:published_time" content="2019-09-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-28T00:00:00+00:00" /><meta property="og:site_name" content="The Astronomical Data Group" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.d773a8586cc36238913d8ca94a29183adfd13d11dad198ae076b377ab46e3f23.css" integrity="sha256-13OoWGzDYjiRPYypSikYOt/RPRHa0ZiuB2s3erRuPyM=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class="theme-base-08 ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://astrodata.nyc/">Astro Data Group</a>
+      </span>
+      
+      
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Astro Data Group</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/">
+						<span>Home</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/FlatironCCA" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/astrodatagroup" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2021 astrodatagroup
+  
+    <a href="https://creativecommons.org/licenses/by/4.0">CC-BY</a>
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Removing HST Systematics based on Our Knowledge of K2 Systematics</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Sep 28, 2019
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/christina-hedges">Christina Hedges</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p><video src="/fig/2019-09-28.mp4" controls preload width="600"></video></p>
+<p>This week, Rodrigo and I have been working on using our knowledge on removing instrument systematics from Kepler to better understand how to remove instrument systematics from HST. In my research I use HST’s Wide Field Camera 3 to observe transiting exoplanets in the infrared, and use the spectrum to try to identify water in the upper atmospheres of planets. This is a tall order, seeing as the signals we are looking for are &lt;200ppm, and the instrument systematics can easily introduce correlated noise at the 0.1% level. Because of these large instrument systematics, it can be hard to trust small water detections. To address this, we’re interested in removing instrument systematics from HST data in a more bayesian and principled way. Rodrigo and Dan have both been teaching me a lot about how to do this!</p>
+<p>The “figure” I’m including is a movie of the frames from HST observations of HD209458b. The spectrum of the object has been scanned up the detector over the course of ~20 seconds, and then a new image is taken during the course of the transit. There are several systematic effects making this data imperfect. The scan rate is not exactly even, causing there to be a “wave” pattern during the scan going up the detector. There is a geometric distortion which causes the dispersion to be slightly tilted in the x and y axis. The flat field for these pixels hasn’t been removed, and there is clear structure that is unrelated to the observation. Finally, over the course of the transit many of these images are taken, and they are not perfectly registered, causing a drift over time. All of these effects add up to a large systematic component.</p>
+<p>This week Rodrigo and I have used similar techniques to his PLD pipeline to iteratively fit for the stellar spectrum and the instrument effects. We are able to fit out the distortions, pixel flat field and image registration errors, and find a transmission spectrum that is consistent with the literature spectrum. Our next steps are to ensure that we are not over fitting, and add in sampling so that we can find robust errors on the spectrum, marginalizing over the instrument systematics. Watch this space!</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/2019-09-20-single-transits/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Fitting single transits</span>
+    </a>
+    
+    
+    <a href="/posts/2019-10-04-giantsorbitinggiants/" class="navigation-next">
+      <span class="navigation-tittle">Giant planets orbiting giant stars with TESS</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+    
+
+
+
+    </body>
+</html>

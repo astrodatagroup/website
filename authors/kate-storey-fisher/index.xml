@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kate Storey-Fisher on Astro Data Group</title>
+    <link>https://astrodata.nyc/authors/kate-storey-fisher/</link>
+    <description>Recent content in Kate Storey-Fisher on Astro Data Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 18 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://astrodata.nyc/authors/kate-storey-fisher/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Great Emu Fight</title>
+      <link>https://astrodata.nyc/posts/2020-09-18-emu-fight/</link>
+      <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-09-18-emu-fight/</guid>
+      <description>At AstroHackWeek 2020 last week, a fight broke out - not between the supportive and friendly participants, but between emulators. I pitched a hack project on comparing emulation methods, mostly so I could show this emu vs. kangaroo fight video during my pitch, and a team of fighters assembled. All credit for this project shared with Catarina Alves, Johannes Heyl, Yssa Camacho-Neves, and Johnny Esteves!
+One of my research projects is on emulating galaxy clustering statistics for speedier, more accurate inference of cosmological and assembly bias parameters.</description>
+    </item>
+    
+    <item>
+      <title>Finding Anomalies in Galaxy Surveys</title>
+      <link>https://astrodata.nyc/posts/2019-08-23-anomalies/</link>
+      <pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2019-08-23-anomalies/</guid>
+      <description>I have been working on a new method for detecting anomalies in astronomical images with deep learning, with Marc Huertas-Company (Observatoire de Paris) and Alexie Leauthaud (UCSC). The idea is to use unsupervised learning to pick out potentially interesting (or &amp;ldquo;anomalous&amp;rdquo;) objects in galaxy surveys, as there is way too much data to look through by hand; the lack of supervision also means we can find interesting things we may not know to look for.</description>
+    </item>
+    
+  </channel>
+</rss>

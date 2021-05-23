@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.74.0" />
+
+    
+    
+    
+
+<title>Finding Unresolved Stellar Companions in Kepler Planet Hosts with Gaia • Astro Data Group</title>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://astrodata.nyc/fig/2020-10-19.png"/>
+
+<meta name="twitter:title" content="Finding Unresolved Stellar Companions in Kepler Planet Hosts with Gaia"/>
+<meta name="twitter:description" content="At this week’s meeting, I updated the group about my project with D F-M, Andy Casey (Monash University), and Tim Morton (USC- the west coast one). We are looking into how to determine how the binarity of Kepler planet hosts influence planet formation. That sounds really exciting but “determine” is doing a lot of work in that sentence. First, we have to figure out which stars are (unresolved) binaries. There are a couple of different ways in which we’ll go about doing this, but the one highlighted this week is the fruit of Andy’s work."/>
+
+<meta property="og:title" content="Finding Unresolved Stellar Companions in Kepler Planet Hosts with Gaia" />
+<meta property="og:description" content="At this week’s meeting, I updated the group about my project with D F-M, Andy Casey (Monash University), and Tim Morton (USC- the west coast one). We are looking into how to determine how the binarity of Kepler planet hosts influence planet formation. That sounds really exciting but “determine” is doing a lot of work in that sentence. First, we have to figure out which stars are (unresolved) binaries. There are a couple of different ways in which we’ll go about doing this, but the one highlighted this week is the fruit of Andy’s work." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://astrodata.nyc/posts/2020-10-19-kicbinaries/" />
+<meta property="og:image" content="https://astrodata.nyc/fig/2020-10-19.png" />
+<meta property="article:published_time" content="2020-10-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-10-19T00:00:00+00:00" /><meta property="og:site_name" content="The Astronomical Data Group" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.d773a8586cc36238913d8ca94a29183adfd13d11dad198ae076b377ab46e3f23.css" integrity="sha256-13OoWGzDYjiRPYypSikYOt/RPRHa0ZiuB2s3erRuPyM=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class="theme-base-08 ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://astrodata.nyc/">Astro Data Group</a>
+      </span>
+      
+      
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Astro Data Group</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/">
+						<span>Home</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/FlatironCCA" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/astrodatagroup" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2021 astrodatagroup
+  
+    <a href="https://creativecommons.org/licenses/by/4.0">CC-BY</a>
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Finding Unresolved Stellar Companions in Kepler Planet Hosts with Gaia</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Oct 19, 2020
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/quadry-chance">Quadry Chance</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p><img src="/fig/2020-10-19.png" alt="img"></p>
+<p>At this week’s meeting, I updated the group about my project with D F-M, Andy Casey (Monash University), and Tim Morton (USC- the west coast one). We are looking into how to determine how the binarity of Kepler planet hosts influence planet formation. That sounds really exciting but “determine” is doing a lot of work in that sentence. First, we have to figure out which stars are (unresolved) binaries. There are a couple of different ways in which we’ll go about doing this, but the one highlighted this week is the fruit of Andy’s work.</p>
+<p>Alongside the astrometric and RV measurements, Gaia also lists errors associated with fits. For unresolved binaries, trying to fit the astrometric or RV curve of a single star will yield an uncharacteristically large amount of error. Through Andy’s work (which I can’t claim to understand beyond the surface level), we can turn this error into a likelihood that the star is not a single star.</p>
+<p>Incredibly, this seems to work really well! In the color-magnitude diagram above of the KIC stars with astrometric measurements, we can pick out the stars that have a low probability of being single above the main sequence; right where we would expect binaries to be.</p>
+<p>Interestingly, the same plot for KIC stars with RV measurements looks very different. There are a few selection effects here we’ll have to figure out: not all stars have both astrometric and  RV measurements and (as pointed out by Trevor) the population of binaries detected by astrometry is different from that of RV binaries. Known spectroscopic and eclipsing binaries are picked up through RV jitter but not astrometric jitter!</p>
+<p>Figuring out how exactly accurate this is will be key. Because neither method is batting 1.000, exactly how to quantify “I’m pretty sure this star is not a single” represents an interesting puzzle for our near-future selves.</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/2020-10-09-pytorch-difference-imaging/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">GPU-accelerated difference imaging</span>
+    </a>
+    
+    
+    <a href="/posts/2020-10-24-radius-gap/" class="navigation-next">
+      <span class="navigation-tittle">Evolution of the exoplanet radius gap</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+    
+
+
+
+    </body>
+</html>

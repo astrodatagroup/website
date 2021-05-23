@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rodrigo Luger on Astro Data Group</title>
+    <link>https://astrodata.nyc/authors/rodrigo-luger/</link>
+    <description>Recent content in Rodrigo Luger on Astro Data Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 24 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://astrodata.nyc/authors/rodrigo-luger/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Occultations in reflected light</title>
+      <link>https://astrodata.nyc/posts/2020-01-24-reflected_light/</link>
+      <pubDate>Fri, 24 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-01-24-reflected_light/</guid>
+      <description>I&amp;rsquo;ve been working on the problem of computing occultation light curves of planets and moons in reflected light. This is an extension of my starry code to the case where the specific intensity on the surface of the body is zero beyond the day/night terminator. To compute the light curve of an occultation event like that shown in the figure, we need to integrate the specific intensity of the body over the portion of the dayside hemisphere that is facing the observer and not obscured by the occultor.</description>
+    </item>
+    
+    <item>
+      <title>Doppler Imaging</title>
+      <link>https://astrodata.nyc/posts/2019-08-09-doppler/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2019-08-09-doppler/</guid>
+      <description>I&amp;rsquo;m generally interested in the problem of mapping the surfaces of stars and exoplanets, and while I&amp;rsquo;ve focused so far on doing this using photometric timeseries, for the past couple months I&amp;rsquo;ve been tinkering with spectroscopic data and the idea of Doppler imaging. The basic idea here is to take high resolution spectra of a rapidly rotating star at different rotational phases and look at the distortion of its spectral lines as starspots rotate from the blueshifted hemisphere to the redshifted hemisphere.</description>
+    </item>
+    
+  </channel>
+</rss>

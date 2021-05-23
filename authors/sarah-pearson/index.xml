@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sarah Pearson on Astro Data Group</title>
+    <link>https://astrodata.nyc/authors/sarah-pearson/</link>
+    <description>Recent content in Sarah Pearson on Astro Data Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 26 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://astrodata.nyc/authors/sarah-pearson/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The straight stellar stream in Cen A</title>
+      <link>https://astrodata.nyc/posts/2019-07-26-cena/</link>
+      <pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2019-07-26-cena/</guid>
+      <description>I recently attended the IAU Symposium 355 “The Realm of the Low Surface Brightness Universe”, where I had the chance to get an update on the current observational status of, among other things, detecting streams in external galaxies. Denija Crnojevic showed her map (Crnojevic et al. 2016) of the nearby galaxy, Centaurus A (see left panel of the Figure above). This lead to some discussion on the “straightness” of the stellar stream emerging from the dwarf galaxy referred to as Dw3 in the figure.</description>
+    </item>
+    
+  </channel>
+</rss>

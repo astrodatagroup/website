@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.74.0" />
+
+    
+    
+    
+
+<title>Estimating Covariance of a Cross Correlation Function • Astro Data Group</title>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://astrodata.nyc/fig/2020-11-06.png"/>
+
+<meta name="twitter:title" content="Estimating Covariance of a Cross Correlation Function"/>
+<meta name="twitter:description" content="Eric Ford summarized some of his recent exploration into various approximations to the covariance of the CCF. The CCF of Echelle spectra of stars (typically with a mask that is non-zero near the location of stellar spectral lines, but sometimes a template spectrum) is frequently used as the basis for measuring radial velocities in the context of characterizing exoplanets and binary stars. The methodology goes back to the days of measuring radial velocities with photographic plates, metal plates and photocells."/>
+
+<meta property="og:title" content="Estimating Covariance of a Cross Correlation Function" />
+<meta property="og:description" content="Eric Ford summarized some of his recent exploration into various approximations to the covariance of the CCF. The CCF of Echelle spectra of stars (typically with a mask that is non-zero near the location of stellar spectral lines, but sometimes a template spectrum) is frequently used as the basis for measuring radial velocities in the context of characterizing exoplanets and binary stars. The methodology goes back to the days of measuring radial velocities with photographic plates, metal plates and photocells." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://astrodata.nyc/posts/2020-11-06-ccf-covar/" />
+<meta property="og:image" content="https://astrodata.nyc/fig/2020-11-06.png" />
+<meta property="article:published_time" content="2020-11-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-11-06T00:00:00+00:00" /><meta property="og:site_name" content="The Astronomical Data Group" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.d773a8586cc36238913d8ca94a29183adfd13d11dad198ae076b377ab46e3f23.css" integrity="sha256-13OoWGzDYjiRPYypSikYOt/RPRHa0ZiuB2s3erRuPyM=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class="theme-base-08 ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://astrodata.nyc/">Astro Data Group</a>
+      </span>
+      
+      
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Astro Data Group</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/">
+						<span>Home</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/FlatironCCA" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/astrodatagroup" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2021 astrodatagroup
+  
+    <a href="https://creativecommons.org/licenses/by/4.0">CC-BY</a>
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Estimating Covariance of a Cross Correlation Function</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Nov 6, 2020
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/eric-ford">Eric Ford</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 6 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p><img src="/fig/2020-11-06.png" alt="img"></p>
+<p><a href="https://personal.psu.edu/ebf11">Eric Ford</a> summarized some of his recent exploration into various approximations to the covariance of the CCF.  The CCF of Echelle spectra of stars (typically with a <em>mask</em> that is non-zero near the location of stellar spectral lines, but sometimes a template spectrum) is frequently used as the basis for measuring radial velocities in the context of characterizing exoplanets and binary stars.  The methodology goes back to the days of measuring radial velocities with photographic plates, metal plates and photocells.  Of course, the advent of modern computers provides much more flexibility in what astronomers can calculate (e.g., assigning lines weights rather than simply 0 or 1 when the mask is a metal plate).  Nevertheless, it appears that most exoplanet hunting teams still compute something amazing similar to the CCFs of the 20th century.  (e.g., <a href="(https://doi.org/10.1051/0004-6361:20010730)">1</a>, <a href="https://doi.org/10.1051/0004-6361/201014909">2</a>, <a href="https://www.aanda.org/articles/aa/abs/2020/04/aa37222-19/aa37222-19.html">3</a>; but see 4).  While these sometimes mention computing the variance of the CCF, they rarely describe computing the <em>covariance</em> of the CCF.  Also concerning, most papers describe computing only a subset of the terms that contribute to the variance of the CCF, those that are based on the variance of the flux, but omit terms that are due the covariance of the flux at different wavelengths.  If one were to use the full covariance matrix, then one can map the CCF to a likelihood function and get rigorous uncertainty estimates.  But if one leaves out some terms, then the resulting velocity uncertainties will probably be overly optimistic.</p>
+<p>Eric began thinking about this last summer, when working with <a href="https://risweb.st-andrews.ac.uk/portal/en/persons/andrew-collier-cameron(e9b0e012-48e6-4003-a427-313ec72683fb).html">Andrew Collier-Cameron</a> and <a href="https://www.linkedin.com/in/sahar-shahaf-86520310a?originalSubdomain=il">Sahar Shahaf</a> on developing and evaluating the <a href="https://arxiv.org/abs/2011.00018">Self-Correlation Analysis of Line Profiles for Extracting Low-amplitude Shifts (SCALPELS) algorithm</a> for removing apparent RV shifts due to changes in the shape of the CCF (<a href="https://arxiv.org/abs/2011.00018">5, Appendix B</a>).  For that paper, they had a large sample of spectra, so they chose to make use of the sample covariance of the CCFs.  Actually, we replaced the sample covariance of the CCF with the sum of two terms: (1) a rank-reduced version of the sample covariance of the CCF that captures the large-scale structure of the CCF covariance, and (2) an analytical model for the near-diagonal terms that can be scaled to match the signal-to-noise of each spectrum.  That seemed to work well for the <a href="https://ui.adsabs.harvard.edu/abs/2020arXiv200901945D/abstract">HARPS-N solar dataset</a> (6), but might not work as well for datasets with significantly fewer and/or lower signal-to-noise spectra, such as several groups are currently working on as part of the <a href="http://exoplanets.astro.yale.edu/science/activity.php">EXPRES Stellar Signals project</a>.</p>
+<p>Eric described a few possible approaches.  The most direct solution is to simply compute the full covariance matrix via brute force, performing the four dimensional integrals necessary to compute each term of the covariance (7).  Eric tried this, but wasn&rsquo;t happy with the computational expense, and didn&rsquo;t observe an improvement compared to some other approximations when measuring velocities (but hasn&rsquo;t evaluated the relative performance for characterizing line shape variations).</p>
+<p>Perhaps the simplest approximation would be to only compute the contribution of terms that depend on the variance of the flux, but then scale up the variance by some factor.  This leaves the question of what factor should be used.  One can compute a minimum value based on the theoretical velocity precision which can be computed in flux space (i.e., before taking the CCF), and scale up the resulting uncertainties the ratio of the theoretical velocity precision to the velocity precision derived with the approximation of the CCF.</p>
+<p>Another possibility would be to simply use the sample covariance matrix, but there&rsquo;s the concern that won&rsquo;t perform well on small datasets. A third possibility would be to use a hierarchical model for the covariance conditioned on the data.  Mathematically, there&rsquo;s a lot of appeal, but it&rsquo;s unclear how computationally intensive it would be and it take a fair bit of work to setup.  So this would probably be the last approach to try implementing.</p>
+<p>A fourth possibility was suggested by <a href="https://github.com/jinglinzhao">Jinglin Zhao</a>, computing the sample covariance of a large number CCFs generating in a bootstrap-like fashion from the actual spectra.  This would still be computationally expensive, but it might be faster than the direct computation approach.  Additionally, it has the advantage that it would be relatively straightforward to account for a complicated line width function (LSF), including details like how it varies across the detection.</p>
+<p>Eric showed some CCFs, CCF minus mean CCF residuals, sample covariance of CCFs, and residuals to the rank-reduced CCF covariance model, and the mean along offset diagonals of the residuals to the rank-reduced CCF covariance model, so as to give people a sense for what the data is like.</p>
+<p>Someone (Hogg?) asked why Eric needed to compute the covariance of the CCF in the first place.  Eric replied that he was trying to use the CCF for a log likelihood that was sensitive to the line-shape changes due to stellar variability.</p>
+<p>Eric presented the above options, hoping that someone would point out some papers where scientists had thought about this more deeply and validated one or more approximations.  Unfortunately, we didn&rsquo;t identify any such paper.  It&rsquo;s unclear what subbranch of astronomy would care about computing the covariance of the CCF accurately.  Maybe there&rsquo;s some other field using CCFs that would care (e.g., MRIs?).<br>
+For now, it seems that the CCF covariance approximation of <a href="https://arxiv.org/abs/2011.00018">5</a> is state-of-the-art, at least for large datasets.  If Eric manages to try the bootstrap approach, he&rsquo;ll report back.</p>
+<h3 id="references-footnotes">References Footnotes</h3>
+<ol>
+<li><a href="https://doi.org/10.1051/0004-6361:20010730">Bouchy et al. (2001)</a></li>
+<li><a href="https://doi.org/10.1051/0004-6361/201014909">Boisse et al. (2010)</a></li>
+<li><a href="https://www.aanda.org/articles/aa/abs/2020/04/aa37222-19/aa37222-19.html">Lafarga et al. (2020)</a></li>
+<li>For instruments using a gas absorption cell as a wavelength calibration, the velocity measurements are typically done using something closer to a forward modeling approach; <a href="https://www.jstor.org/stable/40680756">Butler et al. (1996)</a>.  The advent of optical laser frequency combs (LFCs) and etalons has enabled even more precise wavelength calibration that can leave the stellar spectrum unperturbed.</li>
+<li><a href="https://arxiv.org/abs/2011.00018">Collier-Cameron et al. (2020)</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2020arXiv200901945D/abstract">Dumusque et al. 2020</a>; actually we used 910 daily average spectra from this data set, rather than all 34,550 solar spectra.  The daily averages have very high SNR, ~6,000-10,000 per CCF &ldquo;pixel&rdquo;.</li>
+<li>Technically, one would need to do 6 dimensional integrals if one were to consider the finite extent of each detector pixel.</li>
+</ol>
+<blockquote>
+<h3 id="about-the-author">About the author:</h3>
+<p><a href="https://personal.psu.edu/ebf11">Eric Ford</a> has been joining in on the CCA&rsquo;s Astro Data group meetings while on sabbatical, and is eager to learn from others at CCA applying advanced statistical or data science methodologies that may be relevant to detecting and characterizing exoplanets and exoplanet populations.</p>
+</blockquote>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/2020-10-30-julia-vs-python/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Coding in Julia vs. Python (when using existing Python Packages)</span>
+    </a>
+    
+    
+    <a href="/posts/2020-11-13-unresolved-binaries/" class="navigation-next">
+      <span class="navigation-tittle">Unresolved binaries and where they appear in the color-magnitude diagram</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+    
+
+
+
+    </body>
+</html>

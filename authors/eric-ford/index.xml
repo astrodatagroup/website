@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eric Ford on Astro Data Group</title>
+    <link>https://astrodata.nyc/authors/eric-ford/</link>
+    <description>Recent content in Eric Ford on Astro Data Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 06 Nov 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://astrodata.nyc/authors/eric-ford/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Estimating Covariance of a Cross Correlation Function</title>
+      <link>https://astrodata.nyc/posts/2020-11-06-ccf-covar/</link>
+      <pubDate>Fri, 06 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-11-06-ccf-covar/</guid>
+      <description>Eric Ford summarized some of his recent exploration into various approximations to the covariance of the CCF. The CCF of Echelle spectra of stars (typically with a mask that is non-zero near the location of stellar spectral lines, but sometimes a template spectrum) is frequently used as the basis for measuring radial velocities in the context of characterizing exoplanets and binary stars. The methodology goes back to the days of measuring radial velocities with photographic plates, metal plates and photocells.</description>
+    </item>
+    
+  </channel>
+</rss>

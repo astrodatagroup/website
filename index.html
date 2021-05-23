@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="">
+    
+  <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.74.0" />
+
+    
+
+<title>Astro Data Group</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Astronomical Data Group"/>
+<meta name="twitter:description" content="The Astronomical Data Group at The Center for Computational Astrophysics, Flatiron Institute, Simons Foundation in New York City"/>
+
+<meta property="og:title" content="The Astronomical Data Group" />
+<meta property="og:description" content="The Astronomical Data Group at The Center for Computational Astrophysics, Flatiron Institute, Simons Foundation in New York City" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://astrodata.nyc/" />
+<meta property="og:updated_time" content="2021-05-21T00:00:00+00:00" /><meta property="og:site_name" content="The Astronomical Data Group" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.d773a8586cc36238913d8ca94a29183adfd13d11dad198ae076b377ab46e3f23.css" integrity="sha256-13OoWGzDYjiRPYypSikYOt/RPRHa0ZiuB2s3erRuPyM=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="alternate" type="application/rss+xml" href="https://astrodata.nyc/index.xml" title="Astro Data Group" />
+
+    
+
+</head>
+
+
+    <body class="theme-base-08 ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://astrodata.nyc/">Astro Data Group</a>
+      </span>
+      
+      
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Astro Data Group</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/">
+						<span>Home</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/FlatironCCA" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/astrodatagroup" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2021 astrodatagroup
+  
+    <a href="https://creativecommons.org/licenses/by/4.0">CC-BY</a>
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+  <div class="post-list">
+    
+    
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2021-05-21-gappy/" >Finding and tracing &#34;gaps&#34; with differential topology</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> May 21, 2021
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/gabriella-contardo">Gabriella Contardo</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><img src="/fig/2021-05-21.png" alt="img"></p>
+<p>We’ve been working with David W. Hogg on &ldquo;How to find gaps&rdquo; (or under-densities) in a data-set. Our current method relies on having a twice-differentiable density estimator (see the previous post), namely a KDE using a quartic kernel, and some KDTree tricks for rapidity (it works! So fast!).</p>
+<p>We can find the &ldquo;critical points&rdquo; (minima, maxima, saddle points) using the Hessian (second derivative) of the estimated densities (i.e. on a grid). And from each of these critical points, we can also trace the &ldquo;paths&rdquo; going down the density gradient. Now, we need to figure out what metric(s) will best characterize the &ldquo;gappiness&rdquo; of a point(critical or on a path) for selection.</p>
+<p>The above plot shows the galactocentric radial vs azimuthal velocities for ~90,000 nearby stars from Gaia data, courtesy of Jason Hunt (thanks!). The white dots circled in black as the &ldquo;best&rdquo; critical points selected based on the first (largest) eigenvalue of the Hessian. Their respective paths are colored in shades of green (based on the value of largest eigenvalue as well). This criterion should account for the &ldquo;steepness&rdquo; of a gap (I think?). But we could do the selection on <em>all</em> the points (critical+paths, not all shown here). And we could also do it based on other criteria!</p>
+<p>Other ideas on the to-do list are: looking at the stability of gaps with regard to the bandwidth, bootstrapping or resampling. And I guess we also need to check if we can get the pip name <em>gappy</em>. (Because <em>gapy</em> is already taken, unfortunately!)</p>
+
+        </div>
+      </article>
+     
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2021-05-07-tha-bump/" >A twice-differentiable, finite-support kernel</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> May 7, 2021
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/david-w-hogg">David W Hogg</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><img src="/fig/2021-05-07.png" alt="img"></p>
+<p>With Gaby Contardo (Flatiron), I&rsquo;m looking at data-mining or discovery methods
+for point-cloud data.
+Our current approaches depend on finding and relating critical points (minima,
+saddle points, maxima) of smooth models of the density field.
+These smooth models need to be twice differentiable, which is actually a pretty
+hard criterion:
+It means that we can&rsquo;t use many of the standard kernels in kernel-density
+estimation (KDE), and we can&rsquo;t use certain kinds of common speed-ups for KDE,
+because most speed-ups make the density estimates (technically) non-continuous.</p>
+<p>In group meeting today, I asked about twice-differentiable kernels with finite
+support.
+Finite support is good, because if a kernel has finite support, we can use
+kd-tree-like tricks to make the KDE much faster.
+Dan Foreman-Mackey (Flatiron) had a great idea:
+Just find the lowest-order polynomial (in radius) kernel that has zero slope at
+radius zero, and that goes to zero, zero slope, and zero second derivative at
+a radius of unity.
+I worked out the math for that over a beer and lo-and-behold there is a sweet
+quartic that does the trick (see figure).</p>
+<p>Just as I was writing that code, Soledad Villar (JHU) texted me a link to
+<a href="https://en.wikipedia.org/wiki/Bump_function">the bump</a>, which is differentiable
+to all orders.
+And it has a simple Fourier transform.
+It isn&rsquo;t perfect though, because it has a lot of curvature where it goes to
+zero (see figure above).
+Time to implement something and see what happens.</p>
+
+        </div>
+      </article>
+     
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2021-04-30-feelings/" >Group meeting feels</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Apr 30, 2021
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/adrian-price-whelan">Adrian Price-Whelan</a>
+              •
+          
+              <a class="badge badge-category" href="/authors/christina-hedges">Christina Hedges</a>
+              •
+          
+              <a class="badge badge-category" href="/authors/dan-f-m">Dan F-M</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p>Our group meeting is structured such that group members add slides to a shared Google slide deck with various sections and then we go through the deck as a group.
+One of these sections is called &ldquo;feelings&rdquo; and this week most of our slides were in that section.
+So, instead of our usual blog post, here&rsquo;s a very accurate summary of our group meeting slides <a href="https://xkcd.com/2456/">with &lt;3 to XKCD</a>.</p>
+<p><img src="/fig/2021-04-30.png" alt="types of astro data slides"></p>
+<p><em>Credit for the image to Christina, with Adrian consulting. Words by Dan.</em></p>
+
+        </div>
+      </article>
+     
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2021-04-23-zenodo-sphinx/" >How to automatically retrieve a Bibtex entry for a Zenodo record (and add it to a Sphinx documentation page)</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Apr 23, 2021
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/adrian-price-whelan">Adrian Price-Whelan</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><strong>Niche software trick warning!</strong></p>
+<p>Today I have been working on overhauling the documentation theme and content for
+a Python package I maintain, <a href="https://github.com/adrn/gala">gala</a>, which uses
+Sphinx to build the documentation. On the current main documentation page, <a href="http://gala.adrian.pw/en/latest/#attribution">I
+ask users</a> who write papers with
+<code>gala</code> to cite the <a href="https://joss.theoj.org/papers/10.21105/joss.00388">JOSS
+paper</a> and the <a href="https://zenodo.org/record/4159870">Zenodo
+record</a> for the version that they use, in
+keeping with <a href="https://journals.aas.org/news/policy-statement-on-software/">good software citation
+practices</a>.</p>
+<p>I want to make it as easy as possible for users to retrieve the relevent Bibtex
+entries for <code>gala</code> to include in papers, so I include the Bibtex directly on the
+main page of the <code>gala</code> documentation. However, in my current documentation
+setup, I have had to remember to manually copy-paste the Bibtex entry into the
+documentation page whenever I release a new version. I am bad at remembering
+things like this, so I recently noticed that the Zenodo bibtex entry is way out
+of date.</p>
+<p>Today I figured out how to query the Zenodo web API to retrieve the Bibtex entry
+for the latest release of a software package with a record on Zenodo, and to
+include this into the Sphinx (documentation) build process. Here&rsquo;s what I do
+now:</p>
+<p>In my Sphinx documentation configuration file, typically in <code>docs/conf.py</code>, I
+query the Zenodo API and store the resulting Bibtex to a local (git ignored)
+.rst file, or default to linking to the Zenodo record if that fails for any
+reason:</p>
+<pre><code>import pathlib
+import warnings
+zenodo_path = pathlib.Path('ZENODO.rst')
+if not zenodo_path.exists():
+    import textwrap
+    try:
+        import requests
+        headers = {'accept': 'application/x-bibtex'}
+        response = requests.get('https://zenodo.org/api/records/4159870',
+                                headers=headers)
+        response.encoding = 'utf-8'
+        zenodo_record = (&quot;.. code-block:: bibtex\n\n&quot; +
+                        textwrap.indent(response.text, &quot; &quot;*4))
+    except Exception as e:
+        warnings.warn(&quot;Failed to retrieve Zenodo record for Gala: &quot;
+                      f&quot;{str(e)}&quot;)
+        zenodo_record = (&quot;`Retrieve the Zenodo record here &quot;
+                        &quot;&lt;https://zenodo.org/record/4159870&gt;`_&quot;)
+
+    with open(zenodo_path, 'w') as f:
+        f.write(zenodo_record)
+</code></pre>
+<p>Then, on my main documentation page <code>docs/index.rst</code> (or wherever you would like
+to include this file), I use the Sphinx <code>.. include::</code> directive to include the
+contents of the cached file:</p>
+<pre><code>.. include:: ZENODO.rst
+</code></pre>
+<p>Anything we can do to make it easier to cite software helps!</p>
+
+        </div>
+      </article>
+     
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2021-04-16-snakemake/" >Using Snakemake for data reduction pipelines</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Apr 16, 2021
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/dan-f-m">Dan F-M</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><img src="/fig/2021-04-16.png" alt="img"></p>
+<p>I&rsquo;ve been working on a project with Quadry Chance (U. Florida) and others to infer the orbital properties of binary star systems using <em>just</em> the radial velocity &ldquo;error&rdquo; reported by Gaia EDR3.
+This week, I updated the group on this project, and (shockingly) I was excited to share some lessons learned when building the infrastructure for this pipeline.
+In particular, I&rsquo;ve been using <a href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a> (or, Snakémaké, right?) to orchestrate the pipeline and I&rsquo;ve been finding it very useful.</p>
+<p>Snakemake is more or less an extremely glorified Makefile system (yeah ok I understand it&rsquo;s more than that; don&rsquo;t @ me) with lots of features that make it a good tool for scientific workflows in particular.
+I was originally drawn to it because it is more HPC cluster friendly than most of the other similar tools, but it also has good support for designing reproducible workflows.
+Today I shared a visualization of my pipeline workflow that was automatically generated by Snakemake.
+You can see a screenshot above and a rendered version of this interactive visualization <a href="/snakemake.html">here</a>.
+This is fun (and useful!) because it shows the relationships between different scripts (nodes in the above network) that were executed to generate data products (represented by the connections between nodes).
+If you have scripts that generate figures, you can also include those in this visualization (try clicking on <a href="/snakemake.html">the sections in the sidebar</a>).</p>
+<p>The group asked about support for versioning workflows and including development versions of dependencies.
+The former is pretty well supported in some cases; for example, if you want to generate results for a range of different parameters for a particular script that is fairly straightforward.
+On the other hand, I&rsquo;ve really struggled to construct a good workflow where one of the dependencies is a library that you&rsquo;re developing in parallel.
+It might be possible, for example, to include installing your package as a node in your workflow, but I&rsquo;ve found that that can end up causing you to re-run steps that were unnecessary.</p>
+<p>There is some overhead to getting started with this toolset, but if you&rsquo;re trying to orchestrate a set of analysis scripts with interdependencies, I think that Snakemake could be a good fit.
+The code for this project is (naturally) on GitHub at <a href="https://github.com/one-datum/pipeline">one-datum/pipeline</a> so feel free to check it out!</p>
+
+        </div>
+      </article>
+     
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2020-11-13-unresolved-binaries/" >Unresolved binaries and where they appear in the color-magnitude diagram</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Nov 13, 2020
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/adrian-price-whelan">Adrian Price-Whelan</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><img src="/fig/2020-11-13-1.png" alt="img">
+<img src="/fig/2020-11-13-2.png" alt="img"></p>
+<p>David Hogg and I have been working on &ldquo;open fiber&rdquo; proposals for the <a href="https://www.sdss.org/future/">SDSS-V</a> surveys, which will decide targets for fibers (fiber optic cables that connect from the focal plane to the SDSS spectrographs) that are not allocated by the main survey. As a part of that, I have been making many, many color-magnitude diagrams with data from the <a href="https://sci.esa.int/web/gaia">Gaia Mission</a> (Data Release 2; DR2). For example, look at any one of the panels in the figures above: The gray background is the same in all panels and shows the density of stars selected from Gaia DR2 in the Gaia BP-RP color and absolute G-band magnitude (these have been cleaned to remove high-RUWE sources, but if that doesn&rsquo;t mean anything to you&hellip;ignore this comment!).</p>
+<p>Two features that often come up in conversations between us and others are: (1) the very apparent &ldquo;binary sequence&rdquo; above (brighter than) the main sequence, and (2) the spray of stars that are below (fainter) and to the left of (bluer than) the main sequence. From talking to many other people, I have heard a number of different explanations for these stars: white dwarf-main sequence binaries, cataclysmic variables, low-metallicity main sequence stars, or stripped-envelope stars.</p>
+<p>Thinking about these classes of stars sent me off on a tangent thinking about unresolved binary stars, and wondering about all of the places that they can appear in the color-magnitude diagram (CMD). So, I downloaded some isochrones from <a href="http://waps.cfa.harvard.edu/MIST/">MIST</a> for two different age stellar populations, and made some visualizations to get an intuition for this.</p>
+<p>In each panel, I pair up the &ldquo;star&rdquo; indicated by the red marker with all other possible stellar types along the isochrone (blue lines), assuming that the two &ldquo;stars&rdquo; are blended so that their fluxes add. The two sets of panels are for two different age stellar populations (indicated on the top of the figures). There are many interesting features and things to note in these figures, but of relevance to our original question, it does indeed look like pairing a white dwarf with a lower main sequence star ends up with an unresolved source that would sit below (and bluer than) the main sequence!</p>
+<p>One interesting question to think about: Are there places in the CMD that should be empty? Do we find stars there?</p>
+
+        </div>
+      </article>
+     
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2020-11-06-ccf-covar/" >Estimating Covariance of a Cross Correlation Function</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Nov 6, 2020
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/eric-ford">Eric Ford</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 6 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><img src="/fig/2020-11-06.png" alt="img"></p>
+<p><a href="https://personal.psu.edu/ebf11">Eric Ford</a> summarized some of his recent exploration into various approximations to the covariance of the CCF.  The CCF of Echelle spectra of stars (typically with a <em>mask</em> that is non-zero near the location of stellar spectral lines, but sometimes a template spectrum) is frequently used as the basis for measuring radial velocities in the context of characterizing exoplanets and binary stars.  The methodology goes back to the days of measuring radial velocities with photographic plates, metal plates and photocells.  Of course, the advent of modern computers provides much more flexibility in what astronomers can calculate (e.g., assigning lines weights rather than simply 0 or 1 when the mask is a metal plate).  Nevertheless, it appears that most exoplanet hunting teams still compute something amazing similar to the CCFs of the 20th century.  (e.g., <a href="(https://doi.org/10.1051/0004-6361:20010730)">1</a>, <a href="https://doi.org/10.1051/0004-6361/201014909">2</a>, <a href="https://www.aanda.org/articles/aa/abs/2020/04/aa37222-19/aa37222-19.html">3</a>; but see 4).  While these sometimes mention computing the variance of the CCF, they rarely describe computing the <em>covariance</em> of the CCF.  Also concerning, most papers describe computing only a subset of the terms that contribute to the variance of the CCF, those that are based on the variance of the flux, but omit terms that are due the covariance of the flux at different wavelengths.  If one were to use the full covariance matrix, then one can map the CCF to a likelihood function and get rigorous uncertainty estimates.  But if one leaves out some terms, then the resulting velocity uncertainties will probably be overly optimistic.</p>
+<p>Eric began thinking about this last summer, when working with <a href="https://risweb.st-andrews.ac.uk/portal/en/persons/andrew-collier-cameron(e9b0e012-48e6-4003-a427-313ec72683fb).html">Andrew Collier-Cameron</a> and <a href="https://www.linkedin.com/in/sahar-shahaf-86520310a?originalSubdomain=il">Sahar Shahaf</a> on developing and evaluating the <a href="https://arxiv.org/abs/2011.00018">Self-Correlation Analysis of Line Profiles for Extracting Low-amplitude Shifts (SCALPELS) algorithm</a> for removing apparent RV shifts due to changes in the shape of the CCF (<a href="https://arxiv.org/abs/2011.00018">5, Appendix B</a>).  For that paper, they had a large sample of spectra, so they chose to make use of the sample covariance of the CCFs.  Actually, we replaced the sample covariance of the CCF with the sum of two terms: (1) a rank-reduced version of the sample covariance of the CCF that captures the large-scale structure of the CCF covariance, and (2) an analytical model for the near-diagonal terms that can be scaled to match the signal-to-noise of each spectrum.  That seemed to work well for the <a href="https://ui.adsabs.harvard.edu/abs/2020arXiv200901945D/abstract">HARPS-N solar dataset</a> (6), but might not work as well for datasets with significantly fewer and/or lower signal-to-noise spectra, such as several groups are currently working on as part of the <a href="http://exoplanets.astro.yale.edu/science/activity.php">EXPRES Stellar Signals project</a>.</p>
+<p>Eric described a few possible approaches.  The most direct solution is to simply compute the full covariance matrix via brute force, performing the four dimensional integrals necessary to compute each term of the covariance (7).  Eric tried this, but wasn&rsquo;t happy with the computational expense, and didn&rsquo;t observe an improvement compared to some other approximations when measuring velocities (but hasn&rsquo;t evaluated the relative performance for characterizing line shape variations).</p>
+<p>Perhaps the simplest approximation would be to only compute the contribution of terms that depend on the variance of the flux, but then scale up the variance by some factor.  This leaves the question of what factor should be used.  One can compute a minimum value based on the theoretical velocity precision which can be computed in flux space (i.e., before taking the CCF), and scale up the resulting uncertainties the ratio of the theoretical velocity precision to the velocity precision derived with the approximation of the CCF.</p>
+<p>Another possibility would be to simply use the sample covariance matrix, but there&rsquo;s the concern that won&rsquo;t perform well on small datasets. A third possibility would be to use a hierarchical model for the covariance conditioned on the data.  Mathematically, there&rsquo;s a lot of appeal, but it&rsquo;s unclear how computationally intensive it would be and it take a fair bit of work to setup.  So this would probably be the last approach to try implementing.</p>
+<p>A fourth possibility was suggested by <a href="https://github.com/jinglinzhao">Jinglin Zhao</a>, computing the sample covariance of a large number CCFs generating in a bootstrap-like fashion from the actual spectra.  This would still be computationally expensive, but it might be faster than the direct computation approach.  Additionally, it has the advantage that it would be relatively straightforward to account for a complicated line width function (LSF), including details like how it varies across the detection.</p>
+<p>Eric showed some CCFs, CCF minus mean CCF residuals, sample covariance of CCFs, and residuals to the rank-reduced CCF covariance model, and the mean along offset diagonals of the residuals to the rank-reduced CCF covariance model, so as to give people a sense for what the data is like.</p>
+<p>Someone (Hogg?) asked why Eric needed to compute the covariance of the CCF in the first place.  Eric replied that he was trying to use the CCF for a log likelihood that was sensitive to the line-shape changes due to stellar variability.</p>
+<p>Eric presented the above options, hoping that someone would point out some papers where scientists had thought about this more deeply and validated one or more approximations.  Unfortunately, we didn&rsquo;t identify any such paper.  It&rsquo;s unclear what subbranch of astronomy would care about computing the covariance of the CCF accurately.  Maybe there&rsquo;s some other field using CCFs that would care (e.g., MRIs?).<br>
+For now, it seems that the CCF covariance approximation of <a href="https://arxiv.org/abs/2011.00018">5</a> is state-of-the-art, at least for large datasets.  If Eric manages to try the bootstrap approach, he&rsquo;ll report back.</p>
+<h3 id="references-footnotes">References Footnotes</h3>
+<ol>
+<li><a href="https://doi.org/10.1051/0004-6361:20010730">Bouchy et al. (2001)</a></li>
+<li><a href="https://doi.org/10.1051/0004-6361/201014909">Boisse et al. (2010)</a></li>
+<li><a href="https://www.aanda.org/articles/aa/abs/2020/04/aa37222-19/aa37222-19.html">Lafarga et al. (2020)</a></li>
+<li>For instruments using a gas absorption cell as a wavelength calibration, the velocity measurements are typically done using something closer to a forward modeling approach; <a href="https://www.jstor.org/stable/40680756">Butler et al. (1996)</a>.  The advent of optical laser frequency combs (LFCs) and etalons has enabled even more precise wavelength calibration that can leave the stellar spectrum unperturbed.</li>
+<li><a href="https://arxiv.org/abs/2011.00018">Collier-Cameron et al. (2020)</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2020arXiv200901945D/abstract">Dumusque et al. 2020</a>; actually we used 910 daily average spectra from this data set, rather than all 34,550 solar spectra.  The daily averages have very high SNR, ~6,000-10,000 per CCF &ldquo;pixel&rdquo;.</li>
+<li>Technically, one would need to do 6 dimensional integrals if one were to consider the finite extent of each detector pixel.</li>
+</ol>
+<blockquote>
+<h3 id="about-the-author">About the author:</h3>
+<p><a href="https://personal.psu.edu/ebf11">Eric Ford</a> has been joining in on the CCA&rsquo;s Astro Data group meetings while on sabbatical, and is eager to learn from others at CCA applying advanced statistical or data science methodologies that may be relevant to detecting and characterizing exoplanets and exoplanet populations.</p>
+</blockquote>
+
+        </div>
+      </article>
+     
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2020-10-30-julia-vs-python/" >Coding in Julia vs. Python (when using existing Python Packages)</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Oct 30, 2020
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/daniel-yahalomi">Daniel Yahalomi</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 3 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><img src="/fig/2020-10-30.png" alt="img"></p>
+<p>At this week&rsquo;s meeting, I asked the group for some advice about coding in <em>Julia</em> vs. in <em>Python</em>. I am starting work on a project with David Spergel and Ruth Angus, simulating the exoplanet astrometry yield from the <a href="https://www.nasa.gov/content/goddard/nancy-grace-roman-space-telescope"><em>Nancy Grace Roman Space Telescope</em></a>. We are going to look at synergies between <em>Roman</em> exoplanet astrometry and radial velocity (RV) observations from the <a href="http://www.terrahunting.org/">Terra Hunting Experiment</a>. In order to simulate the joint RV and astrometry signals, we are planning on using <a href="https://docs.exoplanet.codes/en/stable/">exoplanet</a> or <a href="https://github.com/adrn/thejoker">The Joker</a> as well as some other exclusively <em>Python</em> packages. So, I asked for advice on whether it would still be &ldquo;worth it&rdquo; in terms of computational speed to write the code in <em>Julia</em> if the code I am writing will be primarily a wrapper for other <em>Python</em> packages. In addition, I was curious whether calling <em>Python</em> packages in <em>Julia</em> (using PyCall) would introduce a slowdown in the code.</p>
+<p>Eric Ford said that there is no speed penalty in using PyCall in order to run <em>Python</em> packages in <em>Julia</em>. He also mentioned that <em>Python</em> actually works quite well as a scripting language, so if I will primarily be calling <em>Python</em> packages for the meat of the code, then it would work well to do so in <em>Python</em>. The conversation then turned into a deeper discussion about the possible benefits/downsides of re-implementing the existing <em>Python</em> packages in <em>Julia</em>. Dan Foreman-Mackey suggested that the codes themselves are quite replicable and it wouldn&rsquo;t be too difficult to re-implement them in <em>Julia</em>. David Hogg brought up the benefit in writing my own code from scratch in terms of developing a deeper understanding of how the code works. He also suggested for me to &ldquo;think about your goals and do what makes sense within those goals.&rdquo; Megan Bedell and Adrian Price-Whelan then suggested an alternative approach could be to implement a few toy or simpler cases to get a feel for what&rsquo;s going on, but ultimately using existing packages in production work. Dan Foreman-Mackey also mentioned that the <em>Julia</em> code wouldn&rsquo;t be quicker than the existing <em>Python</em> packages, as these packages use C or C++ for the computationally expensive portions of the code.</p>
+<p>The main takeaway I got from the conversation is that it would be possible to do the project in <em>Julia</em>, by re-writing the <em>Python</em> packages that I would need, but that this is only really the right approach if it is something that I am specifically interested in doing as a project in itself. Otherwise, if the primary goal is to quickly produce a functioning simulation of <em>Roman</em> astrometry + Terra Hunting RVs, then it is likely better to use the existing <em>Python</em> code bases and to write the wrapping/scripting code in <em>Python</em> as well.</p>
+<p><a href="https://medium.com/swlh/python-or-julia-whats-your-best-bet-for-data-science-25af6d05961b">Figure credit</a></p>
+
+        </div>
+      </article>
+     
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2020-10-24-radius-gap/" >Evolution of the exoplanet radius gap</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Oct 24, 2020
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/trevor-david">Trevor David</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><img src="/fig/2020-10-24.png" alt="img"></p>
+<p>At this week&rsquo;s meeting I updated the group on an ongoing project examining the influence of age on the <a href="https://arxiv.org/abs/1703.10375">exoplanet radius gap</a>, a relative scarcity of close-in exoplanets sized between 1.5-2 Earth radii. The feature is widely believed to be a signature of atmospheric loss, with planets below the gap having rocky compositions and planets above the gap requiring a few percent-by-mass atmospheres to explain their low bulk densities. In the atmospheric loss paradigm, some fraction of the rocky planets are the remnant cores of planets that lost the entirety of their atmospheres.</p>
+<p>At the core of this project is the observation of a more sparsely populated radius gap at younger system ages. My question to the group was in regards to estimating the statistical significance of the feature in 1D (i.e. just the radius distribution) and 2D (i.e. the orbital period-radius plane). While the gap appears to be remarkably empty in 2D, the feature is somewhat washed out (or, less statistically significant) in 1D partially due to the fact that the precise location of the gap decreases with increasing orbital period. In the 1D case, David W. Hogg proposed that the data could be projected orthogonally to an assumed functional form of the gap. A grid search of the gap function parameters could be performed to test different projections and find the &ldquo;best&rdquo; or emptiest gap, which would also allow us to estimate the feature&rsquo;s significance through simulations.</p>
+<p>Christina Hedges brought up <a href="https://en.wikipedia.org/wiki/Hough_transform">Hough transforms</a> for the 2D case. Since there also appears to be a stellar mass dependence to the location of the radius gap (and conceivably a metallicity dependence), we would be interested in exploring the location of the gap in higher dimensions. Generalizing the Hough transform to higher dimensions was discussed, and Christina threw together a lovely <a href="https://github.com/christinahedges/hufflescuff">notebook</a> for the 2D case.</p>
+
+        </div>
+      </article>
+     
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2020-10-19-kicbinaries/" >Finding Unresolved Stellar Companions in Kepler Planet Hosts with Gaia</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Oct 19, 2020
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/quadry-chance">Quadry Chance</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><img src="/fig/2020-10-19.png" alt="img"></p>
+<p>At this week’s meeting, I updated the group about my project with D F-M, Andy Casey (Monash University), and Tim Morton (USC- the west coast one). We are looking into how to determine how the binarity of Kepler planet hosts influence planet formation. That sounds really exciting but “determine” is doing a lot of work in that sentence. First, we have to figure out which stars are (unresolved) binaries. There are a couple of different ways in which we’ll go about doing this, but the one highlighted this week is the fruit of Andy’s work.</p>
+<p>Alongside the astrometric and RV measurements, Gaia also lists errors associated with fits. For unresolved binaries, trying to fit the astrometric or RV curve of a single star will yield an uncharacteristically large amount of error. Through Andy’s work (which I can’t claim to understand beyond the surface level), we can turn this error into a likelihood that the star is not a single star.</p>
+<p>Incredibly, this seems to work really well! In the color-magnitude diagram above of the KIC stars with astrometric measurements, we can pick out the stars that have a low probability of being single above the main sequence; right where we would expect binaries to be.</p>
+<p>Interestingly, the same plot for KIC stars with RV measurements looks very different. There are a few selection effects here we’ll have to figure out: not all stars have both astrometric and  RV measurements and (as pointed out by Trevor) the population of binaries detected by astrometry is different from that of RV binaries. Known spectroscopic and eclipsing binaries are picked up through RV jitter but not astrometric jitter!</p>
+<p>Figuring out how exactly accurate this is will be key. Because neither method is batting 1.000, exactly how to quantify “I’m pretty sure this star is not a single” represents an interesting puzzle for our near-future selves.</p>
+
+        </div>
+      </article>
+     
+  </div>
+  
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item disabled">
+    <a href="" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/5/">5</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/5/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+        </div>
+        
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    </body>
+</html>

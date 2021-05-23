@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>V. Ashley Vilar on Astro Data Group</title>
+    <link>https://astrodata.nyc/authors/v.-ashley-vilar/</link>
+    <description>Recent content in V. Ashley Vilar on Astro Data Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 27 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://astrodata.nyc/authors/v.-ashley-vilar/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Estimating the Bolometric Light Curves of Supernovae</title>
+      <link>https://astrodata.nyc/posts/2020-09-27-extrabol/</link>
+      <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-09-27-extrabol/</guid>
+      <description>I’ve been working (slowly but surely) on an open source code extrabol which estimates the bolometric light curves of supernovae from an arbitrary set of filtered photometric observations. This code is based on a package by Matt Nicholl, SuperBoL.
+Estimating the bolometric luminosity and black body temperature of a supernova is an extremely common analysis problem in time-domain astronomy as it allows astronomers to easily probe supernova explosion dynamics. Unfortunately, supernova light curves are often poorly sampled across multiple photometric filters, making it challenging to build a pseudo-bolometric light curve directly from the data.</description>
+    </item>
+    
+  </channel>
+</rss>

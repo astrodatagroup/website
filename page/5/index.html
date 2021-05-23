@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="">
+    
+  <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.74.0" />
+
+    
+
+<title>Astro Data Group</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Astronomical Data Group"/>
+<meta name="twitter:description" content="The Astronomical Data Group at The Center for Computational Astrophysics, Flatiron Institute, Simons Foundation in New York City"/>
+
+<meta property="og:title" content="The Astronomical Data Group" />
+<meta property="og:description" content="The Astronomical Data Group at The Center for Computational Astrophysics, Flatiron Institute, Simons Foundation in New York City" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://astrodata.nyc/" />
+<meta property="og:updated_time" content="2021-05-21T00:00:00+00:00" /><meta property="og:site_name" content="The Astronomical Data Group" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.d773a8586cc36238913d8ca94a29183adfd13d11dad198ae076b377ab46e3f23.css" integrity="sha256-13OoWGzDYjiRPYypSikYOt/RPRHa0ZiuB2s3erRuPyM=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="alternate" type="application/rss+xml" href="https://astrodata.nyc/index.xml" title="Astro Data Group" />
+
+    
+
+</head>
+
+
+    <body class="theme-base-08 ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://astrodata.nyc/">Astro Data Group</a>
+      </span>
+      
+      
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Astro Data Group</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/">
+						<span>Home</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/FlatironCCA" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/astrodatagroup" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2021 astrodatagroup
+  
+    <a href="https://creativecommons.org/licenses/by/4.0">CC-BY</a>
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+  <div class="post-list">
+    
+    
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2019-08-16-ztran/" >The Transition Redshift</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Aug 16, 2019
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/angus-beane">Angus Beane</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><img src="/fig/2019-08-16.jpg" alt="img"></p>
+<p>I&rsquo;m working on a short reionization project where we want to figure out where a function crosses zero. I&rsquo;ll spare the details of what this function (P21,g) is for the bottom of this post. But suffice it to say that the redshift where it transitions from being positive to negative (the &ldquo;transition redshift&rdquo;) is an interesting quantity. The plot shows a sketch of what the data might look like - where the function itself is not measured but the data still constrai</p>
+<p>The issue is that the function we want to measure will be really hard to measure at these very high redshifts. But we&rsquo;re not interested in actually measuring the value of the function &ndash; we just want to know where it crosses zero. From the data analysis side, these are two different questions. During the meeting, I discussed various ideas people have had that I&rsquo;ve talked to. One simple way to proceed is just to fit some sort of reasonable function &ndash; like a logistic function &ndash; to the data, and sample over the parameters of the logistic function. Where the model crosses zero is then simply a parameter, and therefore one can back out a posterior distribution in a fairly straightforward way. We decided this will probably do just as well (or better) than some fancier methods.</p>
+<p>Some more info about the function: During the early stages of <a href="https://en.wikipedia.org/wiki/Reionization">reionization</a>, a transition occurs where the 21cm signal and the density field go from being positively correlated on large scales to being negatively correlated. The sign can be measured in the cross-power spectrum between the two fields (the function, P21,g, spoken of earlier). In work in prep., we&rsquo;ve shown (fairly easily) that the redshift at which this transition occurs (the &ldquo;transition redshift&rdquo;) is insensitive to the properties of whatever tracer you use of the density field (e.g., a galaxy survey or the properties of an intensity mapping field). The final piece of the project is simply showing that this transition redshift is measurable even though the cross-power spectrum isn&rsquo;t.</p>
+
+        </div>
+      </article>
+     
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2019-08-09-doppler/" >Doppler Imaging</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Aug 9, 2019
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/rodrigo-luger">Rodrigo Luger</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><img src="/fig/2019-08-09.jpg" alt="img"></p>
+<p>I&rsquo;m generally interested in the problem of mapping the surfaces of stars
+and exoplanets, and while I&rsquo;ve focused so far on doing this using
+photometric timeseries, for the past couple months I&rsquo;ve been tinkering with
+spectroscopic data and the idea of Doppler imaging. The basic idea here is to
+take high resolution spectra of a rapidly rotating star at different
+rotational phases and look at the distortion of its spectral lines as
+starspots rotate from the blueshifted hemisphere to the redshifted hemisphere.
+One of the seminal papers on this method is
+<a href="https://ui.adsabs.harvard.edu/abs/1987ApJ...321..496V">Vogt et al. 1987</a>,
+who did an experiment where they ``painted&rsquo;&rsquo; the letters <strong>VOGT</strong> on the
+surface of a star, generated a bunch of synthetic spectra, and attempted
+to recover the stellar surface map from that dataset. The authors devised
+a method that successfully recovered the <strong>VOGT</strong> pattern, and this has
+since been adapted and applied to dozens of real systems, often quite
+successfully.</p>
+<p>However, the techniques employed in Doppler imaging are often computationally
+expensive, as they require running radiative transfer models in thousands
+of discrete cells on the surface of the star, then numerically integrating
+the specific intensity to arrive at a model for the observed spectrum. Most
+studies therefore focus primarily on <em>optimization</em>: given a fiducial set of
+stellar parameters (such as inclination, angular velocity, differential
+rotation parameter, etc.), the goal is to find the single surface map that
+best matches the observed spectrum, usually via a non-linear optimizer and
+using priors that make convergence fast. While this works well, it can
+mask the great degree of uncertainty inherent to the problem, hide the
+various degeneracies at play, and introduce biases due to the fact that
+parameter like the stellar inclination are rarely known precisely.</p>
+<p>To improve on this, I&rsquo;ve been working on extending my <strong>starry</strong> code
+(<a href="https://ui.adsabs.harvard.edu/abs/2019AJ....157...64L">Luger et al. 2019</a>
+and <a href="https://github.com/rodluger/starry">github.com/rodluger/starry</a>) to
+work with spectra by expanding the wavelength-dependent stellar surface map
+in spherical harmonics. I worked out some cool analytic results that allow
+me to not only compute a model for the spectrum analytically, but also to
+<em>invert</em> the problem and quickly solve for both the maximum likelihood
+surface map <em>and</em> its uncertainty. The figure above shows a test of my
+code on the classic <strong>VOGT</strong> star. The 16 epochs of data are shown on the
+left, next to the phases of the star seen by the observer. The input map
+is shown at the top right, with the inferred map below it, and the
+intensity uncertainty at the bottom.</p>
+
+        </div>
+      </article>
+     
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2019-08-02-tess_cpm/" >Python Toolkit for Background-Subtracted TESS Lightcurves</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Aug 2, 2019
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/soichiro-hattori">Soichiro Hattori</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><img src="/fig/2019-08-02.png" alt="img"></p>
+<p>Over the summer I&rsquo;ve been working with Dan Foreman-Mackey and David Hogg on developing a Python toolkit to obtain background-subtracted <em>TESS</em> lightcurves from the Full-Frame Images (FFI). One of the goals of this project is to detect transient events in the <em>TESS</em> data by doing difference imaging <em>without</em> constructing a reference image. We do that by implementing a method called <em>Causal Pixel Model (CPM) Difference Imaging</em> explained in detail <a href="https://arxiv.org/abs/1508.01853">here</a> and <a href="https://arxiv.org/abs/1710.02428">here</a>. CPM predicts a specific pixel&rsquo;s lightcurve using a linear combination of <em>other pixels&rsquo; lightcurves</em> with the idea that if a specific pixel&rsquo;s lightcurve variation can be explained by other pixels&rsquo; lightcurves, it&rsquo;s probably a systematic background effect. In the figure attached above, we&rsquo;re trying to predict the white pixel&rsquo;s lightcurve in the middle of the image (top middle image) using the lightcurves from all the black pixels. The lightcurve in the middle of the figure shows the white pixel&rsquo;s lightcurve (black line) and also the CPM&rsquo;s prediction (red line). The blue lightcurve below that is the difference between the data and the model, showing that CPM does a pretty good job of removing the the large systematic effects (caused by scattered light from Earth). We still have a few problems to solve such as figuring out how to choose <em>good</em> predictor pixels (we don&rsquo;t want our predictor pixels to have transits in them), but we&rsquo;ve tested this model on several different sources (including supernovae) and our preliminary results are looking promising! The toolkit is still in development but we&rsquo;re planning on making it available to the community soon and excited to get some feedback.</p>
+
+        </div>
+      </article>
+     
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2019-07-26-cena/" >The straight stellar stream in Cen A</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jul 26, 2019
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/sarah-pearson">Sarah Pearson</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><img src="/fig/2019-07-26.png" alt="img"></p>
+<p>I recently attended the IAU Symposium 355 “The Realm of the Low Surface Brightness Universe”, where I had the chance to get an update on the current observational status of, among other things, detecting streams in external galaxies. Denija Crnojevic showed her map (Crnojevic et al. 2016) of the nearby galaxy, Centaurus A (see left panel of the Figure above). This lead to some discussion on the “straightness” of the stellar stream emerging from the dwarf galaxy referred to as Dw3 in the figure. Some people found the straightness odd and argued that the stream must be part of a “plane of satellites”. I thought, instead, that maybe the stream is straight because it’s close to apocenter and has a large velocity component in the direction of the plane of the stream. To test this idea, I generated “mock-streams” using Fardal et al. (2015)’s “particle spray” method implemented in gala (Price-Whelan et al. 2018) to see if I could reproduce the overall morphology of the stream in a simple potential with a disk, bulge and dark matter halo. Specifically, I attempted to reproduce the stream’s S-shape, width, length, its lack of curvature, and its projected separation to its host, Cen A. After a few attempts where I used 1) the s-shape to determine the direction of motion, 2) the width of the stream to estimate the mass of the progenitor, 3) the length of the stream to estimate the age of the stream and 4) where I fixed the distance of Dw3 to be 60 kpc above the disk of Cen A (as observed in projection),  I managed to generate a stream which looked very similar to the observed stream (see the right panel of the figure above). The blue line shows the last 4 Gyr of evolution of the progenitor’s orbit, and the blue points show a mock-stream evolved forward from the endpoint of that orbit until present day. This simulated stream is definitely <em>not</em> the final solution, but with some tweaks to make to potential more similar to that of Cen A (right now I used a MW type potential) and after obtaining kinematic information from Denija’s collaborators, we hope to get a good match to the system. The point here is simply that finding a somewhat reasonable solution wasn’t difficult, and that there’s nothing odd about this stream.</p>
+
+        </div>
+      </article>
+     
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2019-07-19-cmd/" >Dust Inference</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jul 19, 2019
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/lauren-anderson">Lauren Anderson</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><img src="/fig/2019-07-19.png" alt="img"></p>
+<p>I have been working with Andy Miller (Columbia) on building a 3D dust map of the Milky Way galaxy using a Gaussian process prior on 1e9 stars from Gaia. Of course we always want to solve all of astronomy, and infer the dust map and the color magnitude diagram simultaneously. But for a first step we want to model a dust-free CMD, infer individual dust estimates for stars, and then build the GP model on these individual estimates. Here I&rsquo;m showing a first attempt at our dust-free CMD model, built using XD (a gaussian mixture model that can include heteroskedastic noise written by Jo Bovy) on GAIAx2MASSxWISE stars with sfd dust estimates &lt; 0.005 and parallax S/N &gt; 20. Some issues that pop out to me: (1) I find it very strange that all of Gaussians look so isotropic, (2) having such a tight constraint on the dust also minimizes support of the prior, especially for the brightest stars, and (3) although XD is a nice non parametric model, it feels like there are better options, something that is more inclusive of our prior knowledge of the CMD, i.e. that stars are tightly correlated in this space along a line with some thickness. We&rsquo;re looking into using a normalizing flow, which is a non linear transformation of a Gaussian PDF, something that Miles Cranmer (Princeton) has been thinking about. Here I&rsquo;m showing the log likehood of the CMD prior (left panel), some intitial posterior estimates in red (center panel), and the inferred dust estimates (left panel).</p>
+
+        </div>
+      </article>
+     
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2019-07-12-welcome/" >Welcome to our blog!</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jul 12, 2019
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/dan-f-m">Dan F-M</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><img src="/fig/2019-07-12.jpg" alt="img"></p>
+<p>This is the first post for our site and it&rsquo;s pretty meta.
+This week at group meeting, I presented this blog to the group (pictured above).
+Our goal is to use this as a way to highlight some of the things that we work on in our group, to give ourselves some amount of accountability, and to practice open and transparent science.
+After this post, the plan is that each week one group member will post the figure that they presented in group meeting with a short description of what they&rsquo;re working on, what they&rsquo;ve recently learned, and (perhaps) where they&rsquo;re stuck.
+We hope you enjoy it and we hope that we all learn something.</p>
+
+        </div>
+      </article>
+     
+    
+      
+    
+    <article>
+        <header>
+          <h1><a href="/posts/2019-07-06-hello-world/" >Hello World</a></h1>
+          
+          
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jul 6, 2019
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/dan-f-m">Dan F-M</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+        </header>
+        <div class="post">
+          <p><img src="/fig/2019-07-06.jpg" alt="img"></p>
+<p>This is our website where one member of the group will post a research update every week.
+This is meant to be work in progress so keep your expectations set accordingly.</p>
+<p>Photo by <a href="https://unsplash.com/@anthonydelanoix">Anthony DELANOIX</a> on <a href="https://unsplash.com">Unsplash</a>.</p>
+
+        </div>
+      </article>
+     
+  </div>
+  
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/4/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/4/">4</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/5/">5</a></li>
+    
+    
+    <li class="page-item disabled">
+    <a href="" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/5/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+        </div>
+        
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    </body>
+</html>

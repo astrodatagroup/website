@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dan F-M on Astro Data Group</title>
+    <link>https://astrodata.nyc/authors/dan-f-m/</link>
+    <description>Recent content in Dan F-M on Astro Data Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 30 Apr 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://astrodata.nyc/authors/dan-f-m/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Group meeting feels</title>
+      <link>https://astrodata.nyc/posts/2021-04-30-feelings/</link>
+      <pubDate>Fri, 30 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2021-04-30-feelings/</guid>
+      <description>Our group meeting is structured such that group members add slides to a shared Google slide deck with various sections and then we go through the deck as a group. One of these sections is called &amp;ldquo;feelings&amp;rdquo; and this week most of our slides were in that section. So, instead of our usual blog post, here&amp;rsquo;s a very accurate summary of our group meeting slides with &amp;lt;3 to XKCD.
+Credit for the image to Christina, with Adrian consulting.</description>
+    </item>
+    
+    <item>
+      <title>Using Snakemake for data reduction pipelines</title>
+      <link>https://astrodata.nyc/posts/2021-04-16-snakemake/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2021-04-16-snakemake/</guid>
+      <description>I&amp;rsquo;ve been working on a project with Quadry Chance (U. Florida) and others to infer the orbital properties of binary star systems using just the radial velocity &amp;ldquo;error&amp;rdquo; reported by Gaia EDR3. This week, I updated the group on this project, and (shockingly) I was excited to share some lessons learned when building the infrastructure for this pipeline. In particular, I&amp;rsquo;ve been using Snakemake (or, Snakémaké, right?) to orchestrate the pipeline and I&amp;rsquo;ve been finding it very useful.</description>
+    </item>
+    
+    <item>
+      <title>GPU-accelerated difference imaging</title>
+      <link>https://astrodata.nyc/posts/2020-10-09-pytorch-difference-imaging/</link>
+      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-10-09-pytorch-difference-imaging/</guid>
+      <description>At this week&amp;rsquo;s meeting I shared an update about a project called PyTorchDIA led by James Hitchcock (St. Andrews) where we are looking into how numerical tools developed for machine learning can be applied to astronomy. Unlike many applications of PyTorch, TensorFlow, etc. in astronomy, I&amp;rsquo;m not talking about using neural networks. Instead, I&amp;rsquo;m talking about using PyTorch to compute fast convolutions and matrix-vector products to accelerate more &amp;ldquo;traditional&amp;rdquo; astronomy problems.</description>
+    </item>
+    
+    <item>
+      <title>How do people run big group meetings?</title>
+      <link>https://astrodata.nyc/posts/2020-09-11-big-meetings/</link>
+      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-09-11-big-meetings/</guid>
+      <description>Last week we had our first meeting of the new semester and we decided to try something &amp;ldquo;new&amp;rdquo;. In fact we went back to how we ran things back in the olden days: we take the total meeting time and divide it equally between people who are online, and everyone gives an update. In many ways, this is really how we want group meeting to go. The whole point is that, since group members work on such a broad range of topics, we want to have an opportunity to hear what everyone else has been up to.</description>
+    </item>
+    
+    <item>
+      <title>Summary, August 28, 2020</title>
+      <link>https://astrodata.nyc/posts/2020-08-28-summary-08-28/</link>
+      <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-08-28-summary-08-28/</guid>
+      <description>Jiayin Dong (DJ) updated us on her project to study the eccentricity distribution of warm-Neptune exoplanets discovered using data from the TESS mission. She has discovered and carefully characterized about 100 of these transiting planets. She then uses the &amp;ldquo;photoeccetric effect&amp;rdquo; to infer the distribution of eccentricities based on the observed distribution of effective &amp;ldquo;circular stellar densities&amp;rdquo;. The inferred distribution is the observed population of orbital eccentricities but, if the detectability of the planet is correlated with eccentricity, this won&amp;rsquo;t necessarily be equivalent to measuring the true intrinsic eccentricity distribution.</description>
+    </item>
+    
+    <item>
+      <title>Summary, August 14, 2020</title>
+      <link>https://astrodata.nyc/posts/2020-08-14-summary-08-14/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-08-14-summary-08-14/</guid>
+      <description>I started this week&amp;rsquo;s meeting by asking for feedback about our plans for the online.tess.science event that I am co-organizing in September. This event is the 2020 version (hopefully this is just a year, and not an indication that it will go up in flames) of the tess.science series of workshops where astronomers get together to collaborate on new projects related to NASA&amp;rsquo;s TESS mission. The previous 3 events have all been organized in-person and, since this event will be fully remote and international, there are various challenges (and opportunities) that we haven&amp;rsquo;t experienced before.</description>
+    </item>
+    
+    <item>
+      <title>Summary, July 31, 2020</title>
+      <link>https://astrodata.nyc/posts/2020-07-31-summary-07-31/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-07-31-summary-07-31/</guid>
+      <description>We started this week&amp;rsquo;s meeting by discussing the possibility of organizing shared group meetings with other groups within CCA or within the broader astronomical community. While this group is focused on methodology, the scientific interests are broad so it could be useful to occasionally join forces with groups focused on specific research areas of interest to group members. It could also be useful as a method for encouraging random encounters between researchers who don&amp;rsquo;t normally overlap, especially while working remotely.</description>
+    </item>
+    
+    <item>
+      <title>Summary, July 24, 2020</title>
+      <link>https://astrodata.nyc/posts/2020-07-24-summary-07-24/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-07-24-summary-07-24/</guid>
+      <description>This week&amp;rsquo;s group meeting was a bit quieter than usual, but we still had some useful discussions.
+Rodrigo Luger started us off with a discussion of a Gaussian Process kernel for light curves he has derived, using starry, that is parameterized by interpretable physical parameters of the target star&amp;rsquo;s surface: rotation period, inclination, active latitude, spot size, and spot contrast ratio. This is exciting because, while Gaussian Processes are often used to infer the properties of stars from their light curves, the models currently used are all phenomenological.</description>
+    </item>
+    
+    <item>
+      <title>Summary, July 17, 2020</title>
+      <link>https://astrodata.nyc/posts/2020-07-17-summary-07-17/</link>
+      <pubDate>Fri, 17 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-07-17-summary-07-17/</guid>
+      <description>Adrian Price-Whelan and Christina Hedges started off this week&amp;rsquo;s meeting with an update about the new nearby moving group that they found when looking into the pair of transiting planet systems that they discussed three weeks ago. The header figure of this post shows a color-magnitude diagram showing the likely moving group members that they identified using Gaia radial velocities and proper motions. Christina and Adrian have compiled compelling evidence that these stars are members of a previously unknown, youngish (100 Myr), nearby (~40 pc) moving group.</description>
+    </item>
+    
+    <item>
+      <title>Summary, July 10, 2020</title>
+      <link>https://astrodata.nyc/posts/2020-07-10-summary-07-10/</link>
+      <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-07-10-summary-07-10/</guid>
+      <description>This week&amp;rsquo;s meeting started with an update from Rodrigo Luger about his work to map the surfaces of stars using phase curves and occulations. In particular, he has been working on techniques for increasing the efficiency of his methodology when the nullspace of the problem is large or, in other words, when very little information is actually available in the light curve. He has discovered a technique that is similar to previous work by Emily Rauscher where it is possible to re-cast the inference problem into the (much lower dimensional) subspace where the data are constraining, thus drastically reducing the computational cost.</description>
+    </item>
+    
+    <item>
+      <title>Summary, June 26, 2020</title>
+      <link>https://astrodata.nyc/posts/2020-06-26-summary-06-26/</link>
+      <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-06-26-summary-06-26/</guid>
+      <description>David W. Hogg started out this week&amp;rsquo;s group meeting by sharing a project that he has been working on with Anna-Christina Eilers (MIT) to understand the systematic effects in stellar abundance measurements made by the APOGEE survey. They start with the (not totally justifiable) assumption that, while abundance will be a function of birth location, it should not be a function of evolutionary state. While this is observed for some elements (iron, for example) there are clear trends of calcium abundance with surface gravity in the APOGEE sample.</description>
+    </item>
+    
+    <item>
+      <title>Summary, June 5, 2020</title>
+      <link>https://astrodata.nyc/posts/2020-06-05-summary-06-05/</link>
+      <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-06-05-summary-06-05/</guid>
+      <description>In today&amp;rsquo;s meeting the group had a discussion about racism (in particular anti-Black racism) and our role as individuals and as a group in perpetuating it. This was an uncomfortable conversation for some group members and many of the more vocal members of the group (myself very much included) are not yet well-equipped to lead such a discussion. We spent some time sharing recommended reading lists, online educational resources, and brainstorming ideas for how to use this group to learn.</description>
+    </item>
+    
+    <item>
+      <title>Summary, May 29, 2020</title>
+      <link>https://astrodata.nyc/posts/2020-05-29-summary-05-29/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-05-29-summary-05-29/</guid>
+      <description>David W. Hogg started this week off by leading a discussion about how one might define a &amp;ldquo;discovery&amp;rdquo; in astronomy with a specific focus on the context of exoplanet detections in radial velocity surveys. This discussion was inspired by work he has been doing with Megan Bedell to make observing strategy recommendations for the Terra Hunting Experiment, an upcoming decade+ long survey to detect extrasolar Earth-analogs using extreme-precision radial velocities. One of the core questions is whether or not it is sufficient to define a detection as a precise, non-zero, measurement of the radial velocity amplitude.</description>
+    </item>
+    
+    <item>
+      <title>Summary, May 22, 2020</title>
+      <link>https://astrodata.nyc/posts/2020-05-22-summary-05-22/</link>
+      <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-05-22-summary-05-22/</guid>
+      <description>This week we had a smaller group meeting than usual (long weekend, summer weather, apocalypse, etc.), but we still had some interesting conversations!
+Rodrigo Luger discussed some work he&amp;rsquo;s been doing to efficiently fit the light curves of differentially rotating stars (see the header figure). This was inspired by his collaboration with Fran Bartolić to map the time variable surface of Io using occultation light curves as discussed last week. In the limit of long lived spots, Rodrigo has demonstrated that many of the degeneracies commonly found when mapping stellar surfaces using phase curves can be broken.</description>
+    </item>
+    
+    <item>
+      <title>Summary, May 15, 2020</title>
+      <link>https://astrodata.nyc/posts/2020-05-15-summary-may-15/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-05-15-summary-may-15/</guid>
+      <description>Given the current state of the world, we have been holding the Astro Data Group meeting virtually for the past couple of months and this blog has taken a hit over that time. This week, I (Dan) have decided to try to start posting a short summary of what we talk about each week so we&amp;rsquo;ll see how long I keep it up :)!
+Fran Bartolić started us off with a discussion of how he is using non-negative matrix factorization to map the time variable surface of Io using occultation light curves.</description>
+    </item>
+    
+    <item>
+      <title>Eclipsing binaries with archival radial velocities</title>
+      <link>https://astrodata.nyc/posts/2020-03-10-archival-rv-ebs/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-03-10-archival-rv-ebs/</guid>
+      <description>At the TESS Ninja 3 workshop, Jessica Birky (UW) cross matched Adrian&amp;rsquo;s catalog of binary star systems found using APOGEE with the TESS 2-minute cadence light curves and found a handful of light curves with eclipses. With APOGEE cadence, it can be hard to tie down the period of the orbit, but a TESS light curve can approximately perfectly measure the period, epoch, and inclination of the orbit. This breaks degeneracies in the orbital solution and can lead to precise contraints on the stellar parameters.</description>
+    </item>
+    
+    <item>
+      <title>Fitting single transits</title>
+      <link>https://astrodata.nyc/posts/2019-09-20-single-transits/</link>
+      <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2019-09-20-single-transits/</guid>
+      <description>Shortly before group meeting, I asked Twitter what I should work on today (see above). But, working on writing the paper is much less fun than thinking about new features so I went through a derivation of the right &amp;ldquo;priors&amp;rdquo; to use when characterizing a single transit. I have previously published on this topic (as have many others!) and the basic idea is that even if you only detect a single transit you can place some constraint on the orbital period because the duration of the transit is informative.</description>
+    </item>
+    
+    <item>
+      <title>Welcome to our blog!</title>
+      <link>https://astrodata.nyc/posts/2019-07-12-welcome/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2019-07-12-welcome/</guid>
+      <description>This is the first post for our site and it&amp;rsquo;s pretty meta. This week at group meeting, I presented this blog to the group (pictured above). Our goal is to use this as a way to highlight some of the things that we work on in our group, to give ourselves some amount of accountability, and to practice open and transparent science. After this post, the plan is that each week one group member will post the figure that they presented in group meeting with a short description of what they&amp;rsquo;re working on, what they&amp;rsquo;ve recently learned, and (perhaps) where they&amp;rsquo;re stuck.</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://astrodata.nyc/posts/2019-07-06-hello-world/</link>
+      <pubDate>Sat, 06 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2019-07-06-hello-world/</guid>
+      <description>This is our website where one member of the group will post a research update every week. This is meant to be work in progress so keep your expectations set accordingly.
+Photo by Anthony DELANOIX on Unsplash.</description>
+    </item>
+    
+  </channel>
+</rss>

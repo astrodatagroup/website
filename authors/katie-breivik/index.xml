@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Katie Breivik on Astro Data Group</title>
+    <link>https://astrodata.nyc/authors/katie-breivik/</link>
+    <description>Recent content in Katie Breivik on Astro Data Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 02 Oct 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://astrodata.nyc/authors/katie-breivik/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>APOGEE &#43; COSMIC =? &lt;3</title>
+      <link>https://astrodata.nyc/posts/2020-10-02-binaries/</link>
+      <pubDate>Fri, 02 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-10-02-binaries/</guid>
+      <description>After arriving at CCA a few weeks ago, I&amp;rsquo;m starting on a project with Adrian Price-Whelan and David W. Hogg. We are trying to figure out how to answer the question: What does it mean that APOGEE doesn&amp;rsquo;t have a bunch of binary systems containing black holes? Barring the obvious reason that APOGEE&amp;rsquo;s targets are low-ish mass stars and thus unlikely to be companions to BHs and their high-mass progenitors, we think it will be interesting to compare a bunch of synthetic binary populations generated with COSMIC to Adrian&amp;rsquo;s close binary catalog.</description>
+    </item>
+    
+  </channel>
+</rss>

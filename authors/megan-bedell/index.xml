@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Megan Bedell on Astro Data Group</title>
+    <link>https://astrodata.nyc/authors/megan-bedell/</link>
+    <description>Recent content in Megan Bedell on Astro Data Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 07 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://astrodata.nyc/authors/megan-bedell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Summary, August 7, 2020</title>
+      <link>https://astrodata.nyc/posts/2020-08-07-summary-08-07/</link>
+      <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-08-07-summary-08-07/</guid>
+      <description>We had a quiet but interesting group meeting this week!
+First, Trevor David shared some recent work with Gaby Contardo on looking at the exoplanet radius gap as a function of host star age and asked for feedback on methods for quantifying the gap width. He presented a few possible approaches, including fitting Gaussians to the 1D histogram of radii; fitting a line in the 2D radius-age plane by inverting the likelihood; or using a support vector machine model.</description>
+    </item>
+    
+    <item>
+      <title>Summary, June 5, 2020</title>
+      <link>https://astrodata.nyc/posts/2020-06-05-summary-06-05/</link>
+      <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-06-05-summary-06-05/</guid>
+      <description>In today&amp;rsquo;s meeting the group had a discussion about racism (in particular anti-Black racism) and our role as individuals and as a group in perpetuating it. This was an uncomfortable conversation for some group members and many of the more vocal members of the group (myself very much included) are not yet well-equipped to lead such a discussion. We spent some time sharing recommended reading lists, online educational resources, and brainstorming ideas for how to use this group to learn.</description>
+    </item>
+    
+    <item>
+      <title>Data viz, meeting design, and other science</title>
+      <link>https://astrodata.nyc/posts/2020-01-13-dataviz/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-01-13-dataviz/</guid>
+      <description>Hello again, world! We (the data group) have been slightly deliquent with this blog lately, but our collective New Year&amp;rsquo;s Resolution is to post more. (Not really, I just made that up. But here&amp;rsquo;s hoping!) This particular post is going to be fairly meta, because coming back to the blog after a break seems like a natural opportunity to reflect a bit.
+In the last couple of months we made some changes to the format of our weekly group meetings.</description>
+    </item>
+    
+  </channel>
+</rss>

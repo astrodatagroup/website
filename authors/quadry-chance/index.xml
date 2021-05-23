@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quadry Chance on Astro Data Group</title>
+    <link>https://astrodata.nyc/authors/quadry-chance/</link>
+    <description>Recent content in Quadry Chance on Astro Data Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 19 Oct 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://astrodata.nyc/authors/quadry-chance/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Finding Unresolved Stellar Companions in Kepler Planet Hosts with Gaia</title>
+      <link>https://astrodata.nyc/posts/2020-10-19-kicbinaries/</link>
+      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2020-10-19-kicbinaries/</guid>
+      <description>At this week’s meeting, I updated the group about my project with D F-M, Andy Casey (Monash University), and Tim Morton (USC- the west coast one). We are looking into how to determine how the binarity of Kepler planet hosts influence planet formation. That sounds really exciting but “determine” is doing a lot of work in that sentence. First, we have to figure out which stars are (unresolved) binaries. There are a couple of different ways in which we’ll go about doing this, but the one highlighted this week is the fruit of Andy’s work.</description>
+    </item>
+    
+  </channel>
+</rss>

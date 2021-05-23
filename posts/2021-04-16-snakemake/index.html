@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.74.0" />
+
+    
+    
+    
+
+<title>Using Snakemake for data reduction pipelines • Astro Data Group</title>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://astrodata.nyc/fig/2021-04-16.png"/>
+
+<meta name="twitter:title" content="Using Snakemake for data reduction pipelines"/>
+<meta name="twitter:description" content="I&rsquo;ve been working on a project with Quadry Chance (U. Florida) and others to infer the orbital properties of binary star systems using just the radial velocity &ldquo;error&rdquo; reported by Gaia EDR3. This week, I updated the group on this project, and (shockingly) I was excited to share some lessons learned when building the infrastructure for this pipeline. In particular, I&rsquo;ve been using Snakemake (or, Snakémaké, right?) to orchestrate the pipeline and I&rsquo;ve been finding it very useful."/>
+
+<meta property="og:title" content="Using Snakemake for data reduction pipelines" />
+<meta property="og:description" content="I&rsquo;ve been working on a project with Quadry Chance (U. Florida) and others to infer the orbital properties of binary star systems using just the radial velocity &ldquo;error&rdquo; reported by Gaia EDR3. This week, I updated the group on this project, and (shockingly) I was excited to share some lessons learned when building the infrastructure for this pipeline. In particular, I&rsquo;ve been using Snakemake (or, Snakémaké, right?) to orchestrate the pipeline and I&rsquo;ve been finding it very useful." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://astrodata.nyc/posts/2021-04-16-snakemake/" />
+<meta property="og:image" content="https://astrodata.nyc/fig/2021-04-16.png" />
+<meta property="article:published_time" content="2021-04-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-04-16T00:00:00+00:00" /><meta property="og:site_name" content="The Astronomical Data Group" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.d773a8586cc36238913d8ca94a29183adfd13d11dad198ae076b377ab46e3f23.css" integrity="sha256-13OoWGzDYjiRPYypSikYOt/RPRHa0ZiuB2s3erRuPyM=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class="theme-base-08 ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://astrodata.nyc/">Astro Data Group</a>
+      </span>
+      
+      
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Astro Data Group</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/">
+						<span>Home</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/FlatironCCA" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/astrodatagroup" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2021 astrodatagroup
+  
+    <a href="https://creativecommons.org/licenses/by/4.0">CC-BY</a>
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Using Snakemake for data reduction pipelines</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Apr 16, 2021
+    
+      
+    
+      
+      
+          by
+          
+          
+              <a class="badge badge-category" href="/authors/dan-f-m">Dan F-M</a>
+              
+          
+      
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p><img src="/fig/2021-04-16.png" alt="img"></p>
+<p>I&rsquo;ve been working on a project with Quadry Chance (U. Florida) and others to infer the orbital properties of binary star systems using <em>just</em> the radial velocity &ldquo;error&rdquo; reported by Gaia EDR3.
+This week, I updated the group on this project, and (shockingly) I was excited to share some lessons learned when building the infrastructure for this pipeline.
+In particular, I&rsquo;ve been using <a href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a> (or, Snakémaké, right?) to orchestrate the pipeline and I&rsquo;ve been finding it very useful.</p>
+<p>Snakemake is more or less an extremely glorified Makefile system (yeah ok I understand it&rsquo;s more than that; don&rsquo;t @ me) with lots of features that make it a good tool for scientific workflows in particular.
+I was originally drawn to it because it is more HPC cluster friendly than most of the other similar tools, but it also has good support for designing reproducible workflows.
+Today I shared a visualization of my pipeline workflow that was automatically generated by Snakemake.
+You can see a screenshot above and a rendered version of this interactive visualization <a href="/snakemake.html">here</a>.
+This is fun (and useful!) because it shows the relationships between different scripts (nodes in the above network) that were executed to generate data products (represented by the connections between nodes).
+If you have scripts that generate figures, you can also include those in this visualization (try clicking on <a href="/snakemake.html">the sections in the sidebar</a>).</p>
+<p>The group asked about support for versioning workflows and including development versions of dependencies.
+The former is pretty well supported in some cases; for example, if you want to generate results for a range of different parameters for a particular script that is fairly straightforward.
+On the other hand, I&rsquo;ve really struggled to construct a good workflow where one of the dependencies is a library that you&rsquo;re developing in parallel.
+It might be possible, for example, to include installing your package as a node in your workflow, but I&rsquo;ve found that that can end up causing you to re-run steps that were unnecessary.</p>
+<p>There is some overhead to getting started with this toolset, but if you&rsquo;re trying to orchestrate a set of analysis scripts with interdependencies, I think that Snakemake could be a good fit.
+The code for this project is (naturally) on GitHub at <a href="https://github.com/one-datum/pipeline">one-datum/pipeline</a> so feel free to check it out!</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/2020-11-13-unresolved-binaries/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Unresolved binaries and where they appear in the color-magnitude diagram</span>
+    </a>
+    
+    
+    <a href="/posts/2021-04-23-zenodo-sphinx/" class="navigation-next">
+      <span class="navigation-tittle">How to automatically retrieve a Bibtex entry for a Zenodo record (and add it to a Sphinx documentation page)</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+    
+
+
+
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lauren Anderson on Astro Data Group</title>
+    <link>https://astrodata.nyc/authors/lauren-anderson/</link>
+    <description>Recent content in Lauren Anderson on Astro Data Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 19 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://astrodata.nyc/authors/lauren-anderson/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dust Inference</title>
+      <link>https://astrodata.nyc/posts/2019-07-19-cmd/</link>
+      <pubDate>Fri, 19 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://astrodata.nyc/posts/2019-07-19-cmd/</guid>
+      <description>I have been working with Andy Miller (Columbia) on building a 3D dust map of the Milky Way galaxy using a Gaussian process prior on 1e9 stars from Gaia. Of course we always want to solve all of astronomy, and infer the dust map and the color magnitude diagram simultaneously. But for a first step we want to model a dust-free CMD, infer individual dust estimates for stars, and then build the GP model on these individual estimates.</description>
+    </item>
+    
+  </channel>
+</rss>
